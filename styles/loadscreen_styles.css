@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* Hintergrundbild */
+body {
+	font-family: Helvetica;
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 70px;
+	background-image: url(../bilder/LoadingImage_iOS_320x480.png);
+	background-repeat:no-repeat;
+	background-position: bottom left;
+	background-attachment: fixed;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<title>Hochschule Karlsruhe - Mechatronik</title>
+<html>
+
+	<!-- ######################### HEAD ######################### -->
+	<head>
+		<!-- CSS allgemein für alle Subtopics -->
+		<link href="../styles/sub_topics_styles.css" rel="stylesheet" type="text/css" />
+		<!-- CSS für die Navigation -->
+		<link href="../styles/navigation.css" rel="stylesheet" type="text/css" />
+		<!-- CSS für die Toolbar -->
+		<link href="../styles/toolbar.css" rel="stylesheet" type="text/css" />
+		
+		<meta name="Content-Type" content="text/html"; charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<script src="../js/showHideLayer.js" language="JavaScript" type="text/javascript"></script>
+		<!-- jQuery -->
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<!-- GoogleMaps API -->		
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+		<!-- GoogleMaps erstellen und Koordinaten zuweisen -->		
+		<script>
+			// GoogleMaps Karte erstellen und aktuelle Position (Koordinaten) zuweisen
+			$(function(){
+				navigator.geolocation.getCurrentPosition(function(position){
+					meineLongitude = position.coords.longitude;
+					meineLatitude = position.coords.latitude;
+					var optionen = {zoom: 13, center: new google.maps.LatLng(meineLatitude, meineLongitude),mapTypeId: google.maps.MapTypeId.ROADMAP};
+					var karte = new google.maps.Map(document.getElementById('karte'),optionen);
+				});
+			});	
+			
+			// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
+				/* $.getJSON('../daten/gebaeude.json', function(json){
+				$.each(json, function(gebaeude){
+					var marker
+					marker = new google.maps.Marker({
+						map: karte,
+						position: new google.maps.LatLng(daten.Position.Latitude,daten.Position.Longitude),
+						animation: google.maps.Animation.DROP
+					});
+				});
+			}); */
+			
+			//Der Karte die Klasse aktiv zuweisen
+
+						//Umschaltung der Toolbar
+			$('nav a').on('click',function(){
+				$('section, nav a').removeClass('aktiv');
+				$(this).addClass('aktiv');
+				$($(this).attr('href')).addClass('aktiv');
+				return false;
+			});
+			
+			$('#karte').addClass('aktiv');
+				
+			
+		</script>	
+	</head>
+
+	<!-- ######################### BODY ######################### -->
+	<body>
+		<!-- ######################### HEADER ######################### -->
+		<div id="title_bar">
+		 <table border="0" cellpadding="0" width="100%">
+		  <tr>
+		   <td align="center" width="15%">
+			<a href="javascript:history.back()"><img src="../bilder/button_back.png" height="35"></a>
+		   </td>
+		   		   
+		   <td align="center" width="*">
+		    <h1>Navigation</h1>
+		   </td>
+		   		   
+		   <td  align="center" width="15%">
+			<a href="../main_topics/navigation.html"><img src="../bilder/button_navi.png" height="35"></a>
+		   </td>			
+			
+		  </tr>	
+		 </table>
+		</div>
+		
+			<!-- ######################### Karte ######################### -->
+		    <section id="karte"></section>
+		
+			<!-- ######################### QR-Code ######################### -->		
+			<section id="qr-code">
+				<h1>Wo bin ich?</h1>
+				<ul>
+					Hier sollte ein QR-Code Reader sein...<!-- Wird dynamisch befüllt -->
+				</ul>
+			</section>
+		
+			<!-- ######################### QR-Code ######################### -->
+			<section id="uebersicht">
+				<h1>Gebäudeplan F / Li</h1>
+				<ul>
+					Hier kommt eine Gebäudeplan hin
+				</ul>
+			</section>
+			
+			
+
+			<!-- ######################### Toolbar ######################### -->
+				<nav>
+				<li><a class="karte" href="#karte">Karte</a></li>
+				<li><a class="qr-code" href="#qr-code">Wo bin ich?</a></li>
+				<li><a class="uebersicht" href="#uebersicht">Gebäudeplan</a></li>	
+				</nav>
+	</body>
+</html>
