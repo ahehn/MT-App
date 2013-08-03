@@ -1,0 +1,15 @@
+/* Glow beim Klicken der Buttons entfernen: */
+.ui-focus,
+.ui-btn:focus {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.ui-input-text.ui-focus,
+.ui-input-search.ui-focus {
+	-moz-box-shadow: none /*{global-active-background-color}*/;
+	-webkit-box-shadow: none /*{global-active-background-color}*/;
+	box-shadow: none /*{global-active-background-color}*/;	
+}
+
+/* Header-Buttons evtl durch Weglassen der Klassen z.B. "ui-btn-corner-all" */
