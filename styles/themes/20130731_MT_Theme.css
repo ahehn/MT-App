@@ -63,7 +63,7 @@
 	background-image:         linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff /*{a-body-background-end}*/);
 }
 .ui-overlay-a {
-	background-image: none;
+	background-image: url(images/bg.png);
 	border-width: 0;
 }
 .ui-body-a,
@@ -515,4 +515,15 @@ a.ui-link-inherit {
 	outline-width: 1px;
 	outline-style: auto;
 }
-			
+
+/* Background-Image (Manuell eingefügter Code) */
+.ui-page {
+      background:url(images/bg.png);
+	  background-repeat:no-repeat;
+	  background-position: bottom left;
+	  background-attachment: fixed;
+      -webkit-background-size: cover;          
+      -moz-background-size: cover;         
+       -o-background-size: cover;          
+       background-size: cover;
+ }   
