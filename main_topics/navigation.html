@@ -6,11 +6,9 @@
 		<meta name="Content-Type" content="text/html"; charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		
-		<!-- jQuery mobile CSS -->	
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
-		
-		<!-- jQuery mobile MT-APP THEME CSS -->		
-		<link rel="stylesheet" href="../styles/themes/20130731_MT_Theme.css" type="text/css" />
+		<!-- Einbindung der Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="../styles/jquery.mobile.structure-1.3.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/themes/20130731_MT_Theme.min.css" />
 		
 		<!-- Eigene CSS allgemein für alle Subtopics -->
 		<!-- <link rel="stylesheet" href="../styles/main_topics_styles.css"  type="text/css" /> -->
@@ -27,10 +25,8 @@
 		<!-- GoogleMaps API -->
 		<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
 		
-		<!-- jQuery -->
+		<!-- Einbindung von jQuery und jQuery mobile -->
 		<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
-				
-		<!-- jQuery mobile -->
 		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
 		
 		<!-- jQuery mobile GOOGLE MAPS Plugin -->		
@@ -114,13 +110,32 @@
 			 );
 			  	
 			});
+			
+			
+			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+			$( "#scan" ).click(function() {
+			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+		    scanner.scan(
+			  function (result) {
+				  alert("We got a barcode\n" +
+						"Result: " + result.text + "\n" +
+						"Format: " + result.format + "\n" +
+						"Cancelled: " + result.cancelled);
+			  }, 
+			  function (error) {
+				  alert("Scanning failed: " + error);
+			  }
+		    );
+			});
+			
+			
 		</script>	
 		
 	</head>
 
 	<!-- ######################### BODY ######################### -->
 	<body>
-		<div data-role="page" id="p1" style="position:absolute; width: 100%;height: 100%">
+		<div data-role="page"  id="p1"  data-theme="a">
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
 				<a href="../index.html" class="ui-icon-alt" data-role="button" data-icon="back" data-iconpos="notext" data-inline="true">Home - Black icons, no disc</a>
@@ -146,7 +161,7 @@
 		</div>
 		
 		
-		<div data-role="page" id="p2">
+		<div data-role="page"   id="p2" data-theme="a">
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
 				<a href="../index.html" class="ui-icon-alt" data-role="button" data-icon="back" data-iconpos="notext" data-inline="true">Home - Black icons, no disc</a>
@@ -158,16 +173,9 @@
 			<div data-role="content" class="content">
 				<p>Du weißt nicht wo du gerade bist? Dann scanne einen QR-Code in deiner Nähe. Er wird die weiterhelfen...</p>
 				
-				<p><button>SCAN</button> </p>
-				<p><a href="#" data-role="button" data-inline="true">True</a></p>
-				<a href="#" data-role="button" data-mini="true" data-inline="true">Cancel</a>
+				<p><button id="scan" data-icon="search" data-iconpos="top">SCAN</button> </p>
 				
-				<div data-role="controlgroup">
-    <a href="#" data-role="button">Timeline</a>
-    <a href="#" data-role="button">Mentions</a>
-    <a href="#" data-role="button">Retweets</a>
-</div>
-				
+	
 			</div>
 			
 			<!-- ######################### FOOTER ######################### -->
@@ -183,7 +191,7 @@
 		</div>
 		
 		
-		<div data-role="page" id="p3">
+		<div data-role="page" id="p3"  data-theme="a">
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
 				<a href="../index.html" class="ui-icon-alt" data-role="button" data-icon="back" data-iconpos="notext" data-inline="true">Home - Black icons, no disc</a>
