@@ -4,7 +4,7 @@
 /* GoogleMaps Karte */
 
 
-div#karte {
+div#map_canvas {
 	top: 40px;
 	right: 0px;
 	bottom: 0px;
