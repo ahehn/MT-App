@@ -566,7 +566,7 @@ a.ui-link-inherit {
 }
 /* loading icon */
 .ui-icon-loading {
-	background: url(images/ajax-loader.gif);
+	background: url(images/gears.gif);
 	background-size: 46px 46px;
 }
 
@@ -852,7 +852,7 @@ a.ui-link-inherit {
 }
 /* loading icon */
 .ui-icon-loading {
-	background: url(images/ajax-loader.gif);
+	background: url(images/gears.gif);
 	background-size: 46px 46px;
 }
 /* Button corner class
