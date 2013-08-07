@@ -8,15 +8,13 @@
 		
 		<title>Hochschule Karlsruhe - Studiengang Mechatronik</title>
 
-
-		
 		<!-- Einbindung der Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="styles/main_menu.css" />
 		<link rel="stylesheet" type="text/css" href="styles/jquery.mobile.structure-1.3.2.min.css" />
-		<link rel="stylesheet" type="text/css" href="styles/themes/20130731_MT_Theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="styles/themes/20130807_MT_Theme.min.css" />
 		
 		<!-- Einbindung von jQuery und jQuery mobile -->
-		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 		
 		<script type="text/javascript" src="phonegap.js"></script>
@@ -27,9 +25,18 @@
 	<body>
 		<!-- Main menu -->
 		<div data-role="page" data-theme="a" id="Main" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
-			<div data-role="header" data-position="fixed">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelMain" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
+			<div data-role="header" data-position="fixed">	
 				<h1>Hauptmenü</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" class="ui-btn-right" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" class="ui-btn-right" href="#SidePanelMain">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -44,20 +51,23 @@
 				
 			</div>
 		</div>
-
-		<!-- Side panel -->	
-		<div data-role="panel" data-theme="a" id="SidePanel" data-position="right">
-			<a data-role="button" data-icon="info"   data-mini="true" data-transistion="flip"  href="#Impressum">Impressum</a>
-			<a data-role="button" data-icon="search" data-mini="true" data-transistion="flip"  rel="external" href="main_topics/navigation.html">Navigator</a>
-			<a data-role="button" data-icon="back"   data-mini="true" data-transistion="slide" data-rel="back">Zurück</a>
-		</div>
+		
 		
 		<!-- Impressum -->	
 		<div data-role="page" data-theme="a" id="Impressum" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelImpressum" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Main">Zurück</a>
 				<h1>Impressum</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelImpressum">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -73,10 +83,19 @@
 		
 		<!-- Main topics -->
 		<div data-role="page" data-theme="a" id="Studiengang" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelStudiengang" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Main">Zurück</a>
 				<h1>Studiengang</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelStudiengang">Menü</a>
 			</div>
  
 			<div data-role="content">
@@ -94,10 +113,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Hochschule" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelHochschule" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Main">Zurück</a>
 				<h1>Hochschule</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelHochschule">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -116,10 +144,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Studentenleben" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelStudentenleben" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Main">Zurück</a>
 				<h1>Studentenleben</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelStudentenleben">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -136,10 +173,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Mediathek" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelMediathek" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Main">Zurück</a>
 				<h1>Mediathek</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelMediathek">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -163,10 +209,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Spiele" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelSpiele" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Main">Zurück</a>
 				<h1>Spiele</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelSpiele">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -186,10 +241,19 @@
 		
 		<!-- Subtopics -->		
 		<div data-role="page" data-theme="a" id="Mechatronik" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelMechatronik" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studiengang">Zurück</a>
 				<h1>Was ist Mechatronik?</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelMechatronik">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -206,10 +270,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Vor" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelVor" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studiengang">Zurück</a>
 				<h1>Vor dem Studium</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelVor">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -238,10 +311,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Mittendrin" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelMittendrin" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studiengang">Zurück</a>
 				<h1>Mittendrin</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelMittendrin">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -295,10 +377,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Nach" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelNach" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studiengang">Zurück</a>
 				<h1>Nach dem Studium</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelNach">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -381,10 +472,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Ranking" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelRanking" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Hochschule">Zurück</a>
 				<h1>Ranking</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelRanking">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -406,10 +506,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Forschung" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelForschung" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Hochschule">Zurück</a>
 				<h1>Forschung</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelForschung">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -435,10 +544,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Stipendien" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelStipendien" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Hochschule">Zurück</a>
 				<h1>Stipendien</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelStipendien">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -455,10 +573,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Kontakt" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelKontakt" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Hochschule">Zurück</a>
 				<h1>Kontakt</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelKontakt">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -494,19 +621,28 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Navigator" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelNavigator" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Hochschule">Zurück</a>
 				<h1>Navigator</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelNavigator">Menü</a>
 			</div>
 
 			<div data-role="content">
 				<div data-role="collapsible-set" data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
-					
-					
-					<!-- Navigator -->
-					
-					
+					<!--##################################################################################
+						##																				##
+						##									Navigator 									##
+						##																				##
+						################################################################################## -->
 				</div>
 			</div>
 			
@@ -516,10 +652,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Finanzierung" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelFinanzierung" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studentenleben">Zurück</a>
 				<h1>Finanzierung</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelFinanzierung">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -575,10 +720,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Wohnen" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelWohnen" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studentenleben">Zurück</a>
 				<h1>Wohnen</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelWohnen">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -594,10 +748,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Freizeitangebote" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelFreizeitangebote" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studentenleben">Zurück</a>
 				<h1>Freizeitangebote</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelFreizeitangebote">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -662,10 +825,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Produktememory" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelProduktememory" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Spiele">Zurück</a>
 				<h1>Produktememory</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelProduktememory">Menü</a>
 			</div>
 
 			<div data-role="content">
@@ -687,10 +859,19 @@
 		</div>
 		
 		<div data-role="page" data-theme="a" id="Quiz" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelQuiz" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Spiele">Zurück</a>
 				<h1>Quiz</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelQuiz">Menü</a>
 			</div>
 
 			<div data-role="content">
