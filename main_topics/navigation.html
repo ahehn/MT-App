@@ -9,8 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		
 		<!-- Einbindung von Phonegap und Plugin -->
-		<script src="phonegap.js"></script>
-		<script src="barcodescanner.js"></script>
+
 		
 		<!-- Einbindung der Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="../styles/jquery.mobile.structure-1.3.2.min.css" />
@@ -33,7 +32,10 @@
 		
 		<!-- Einbindung von jQuery und jQuery mobile -->
 		<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
+
+		
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script type="text/javascript" src="../js/barcodescanner.js"></script>
 		
 		<!-- jQuery mobile GOOGLE MAPS Plugin -->		
 		<!-- <script src="../js/jquery.ui.map.full.min.js" type="text/javascript"></script> -->
@@ -134,11 +136,19 @@
 			  }
 		    );
 			});
+			
+			
+			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+			$( "#alarm" ).click(function() {
+			window.alert('Alarm alarm alarm, bidäbidäbidäbidä')
+
+			});
+			
 		});
 			
 			
 		</script>	
-		
+		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
 	</head>
 
 	<!-- ######################### BODY ######################### -->
@@ -146,9 +156,9 @@
 		<div data-role="page"  id="p1"  data-theme="a">
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
-				<a href="../index.html" class="ui-icon-alt" data-role="button" data-icon="back" data-iconpos="notext" data-inline="true">Home - Black icons, no disc</a>
+				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#Main">Zurück</a>
 				<h1>Navigator</h1>
-				<a href="../main.html" class="ui-icon-alt" data-role="button" data-icon="bars" data-iconpos="notext" data-inline="true">Home - Black icons, no disc</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#SidePanel">Menü</a>
 			</div>
 			
 			<!-- ######################### Content ######################### -->
@@ -183,6 +193,8 @@
 				
 				<p><button id="scan" data-icon="search" data-iconpos="top">SCAN</button> </p>
 				
+				<p><button id="alarm" data-icon="search" data-iconpos="top">alarm</button> </p>
+				
 				<p><a href="navitest.html" rel="external" data-role="button" data-icon="edit" data-iconpos="top">TEST-Site</a></p>
 			</div>
 			
@@ -213,24 +225,14 @@
 				
 				<ul data-role="listview" data-inset="true" data-divider-theme="a">
 					<li data-role="list-divider">Gebäude F</li>
-					<li data-icon="false"><a href="#popup_og3" data-rel="popup" data-position-to="window" data-transition="fade">3. OG</a></li>
-					<li data-icon="false"><a href="#popup_og2" data-rel="popup" data-position-to="window" data-transition="fade">2.OG</a></li>
-					<li data-icon="false"><a href="#popup_og1" data-rel="popup" data-position-to="window" data-transition="fade">1.OG</a></li>
-					<li data-icon="false"><a href="#popup_eg" data-rel="popup" data-position-to="window" data-transition="fade">EG</a></li>
-					<li data-icon="false"><a href="#popup_kg" data-rel="popup" data-position-to="window" data-transition="fade">KG</a></li>
+					<li data-icon="false"><a href="#popup_og3" data-rel="popup" data-position-to="window" data-transition="slideup">3. OG</a></li>
+					<li data-icon="false"><a href="#popup_og2" data-rel="popup" data-position-to="window" data-transition="slideup">2.OG</a></li>
+					<li data-icon="false"><a href="#popup_og1" data-rel="popup" data-position-to="window" data-transition="slideup">1.OG</a></li>
+					<li data-icon="false"><a href="#popup_eg" data-rel="popup" data-position-to="window" data-transition="slideup">EG</a></li>
+					<li data-icon="false"><a href="#popup_kg" data-rel="popup" data-position-to="window" data-transition="slideup">KG</a></li>
 				</ul>
-				
-				</br>
-				</br>
-				<p>Gebäudeplan des Gebäudes F</p>
-				<div data-role="controlgroup">
-					<a href="#popup_og3" data-role="button" data-rel="popup" data-position-to="window" data-transition="fade">3. OG</a>
-					<a href="#popup_og2" data-role="button" data-rel="popup" data-position-to="window" data-transition="fade">2.OG</a>
-					<a href="#popup_og1" data-role="button" data-rel="popup" data-position-to="window" data-transition="fade">1.OG</a>
-					<a href="#popup_eg" data-role="button" data-rel="popup" data-position-to="window" data-transition="fade">EG</a>
-					<a href="#popup_kg" data-role="button" data-rel="popup" data-position-to="window" data-transition="fade">KG</a>
-				</div>
-						
+					
+										
 				<div data-role="popup" id="popup_og3" data-overlay-theme="a" data-theme="a" data-corners="false">
 					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 					<img class="popphoto" src="../bilder/OG3.png" style="max-height:90%;" alt="Gebäude F, 3.OG">

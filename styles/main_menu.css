@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* Bilder für Menüpunkte */
+div#Main img{
+	margin-left: 10%;
+	vertical-align: bottom;
+    border: none;
+}
