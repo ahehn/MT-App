@@ -43,7 +43,10 @@
 
 		// device APIs are available
 		//
-		function onDeviceReady() {
+		
+				
+		$(document).ready(function(){
+		function onDeviceReady() {		
 			navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		}
 
@@ -68,8 +71,7 @@
 				  'message: ' + error.message + '\n');
 		}
 
-		
-		$(document).ready(function(){
+
 
 	
 		// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
