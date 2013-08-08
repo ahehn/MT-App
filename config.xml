@@ -58,6 +58,7 @@
     -->
 	<gap:plugin name="com.phonegap.plugins.barcodescanner" />
 	<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
+	<plugin name="VideoPlayer" value="com.phonegap.plugins.video.VideoPlayer"/>
 
 
     <!-- Define app icon for each platform. -->
