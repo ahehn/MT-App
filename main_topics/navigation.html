@@ -36,9 +36,9 @@
 		
 		<!-- Eigene Java-Script Funktionen -->	
 		<script type="text/javascript">
-		
+		$(document).ready(function(){
 	
-// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+		// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
 			$( "#scan" ).click(function() {
 			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 		    scanner.scan(
@@ -53,6 +53,7 @@
 			  }
 		    );
 			});
+		});
 			
 			
 		</script>
