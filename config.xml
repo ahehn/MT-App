@@ -57,7 +57,6 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 	<gap:plugin name="com.phonegap.plugins.barcodescanner" />
-	<!-- <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" /> -->
 
 
     <!-- Define app icon for each platform. -->
