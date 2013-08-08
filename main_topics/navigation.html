@@ -35,6 +35,8 @@
 		
 		<!-- Eigene Java-Script Funktionen -->	
 		<script type="text/javascript">
+			// Wait for device API libraries to load
+			//
 			document.addEventListener("deviceready", onDeviceReady, false);
 
 			// device APIs are available
@@ -55,19 +57,6 @@
 									'Heading: '            + position.coords.heading               + '<br />' +
 									'Speed: '              + position.coords.speed                 + '<br />' +
 									'Timestamp: '          + position.timestamp                    + '<br />';
-									
-				meineLongitude = position.coords.longitude;
-				meineLatitude = position.coords.latitude;			   
-				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
-				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
-					zoom: 17,													// Zoom-Stufe der Karte
-					center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
-					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
-					zoomControl: true
-				};
-				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-									
-									
 			}
 
 			// onError Callback receives a PositionError object
@@ -75,71 +64,7 @@
 			function onError(error) {
 				alert('code: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
-				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
-				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
-					zoom: 15,													// Zoom-Stufe der Karte
-					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
-					mapTypeId: google.maps.MapTypeId.ROADMAP					// Definiert den Anzeige-Typ der Goole Maps Karte
-					zoomControl: true
-				};
-			 	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 			}
-			
-			
-			
-// jQuery
-			/*$(document).ready(function(){ 
-			var map = new google.maps.Map(document.getElementById('karte'), mapOptions);
-			
- 			
-			   
-			   // Google Map erzeugen
-			   var map = new google.maps.Map(document.getElementById('karte'), mapOptions);
-			   // Marker für aktuellen Standort einfügen
-			   var marker = new google.maps.Marker({
-				position: Latlng_position,
-				map: map,
-				title: 'Mein Standort',
-				icon: '../bilder/position.png'
-			   });
-			   
-			   // Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('../daten/gebaeude.json', function(json) {
-					$.each(json, function(bau,data) {
-						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
-						// Creating a marker and putting it on the map
-						var marker = new google.maps.Marker({
-							position: latLng,
-							map: map,
-							title: data.name,
-							icon: '../bilder/' + bau + '.png'
-						});
-					});
-				});
-			   },
-			   // Ausgabe einer Fehlermeldung sowie änderung der Anzeige-Optionen, wenn die Koordinaten der aktuellen Position nicht bestimmt werden konnten
-			   function(){window.alert('Deine Position konnte nicht ermittelt werden! :-(');
-			  
-			 // Google Map erzeugen
-			 var map = new google.maps.Map(document.getElementById('karte'), mapOptions);
-			 
-			 // Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('../daten/gebaeude.json', function(json) {
-					$.each(json, function(bau,data) {
-						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
-						// Creating a marker and putting it on the map
-						var marker = new google.maps.Marker({
-							position: latLng,
-							map: map,
-							title: data.name,
-							icon: '../bilder/' + bau + '.png'
-						});
-					});
-				});
-			  }
-			 ); */
-
-
 
 
 		</script>
