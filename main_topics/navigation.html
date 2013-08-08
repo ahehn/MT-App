@@ -37,11 +37,72 @@
 		<!-- Eigene Java-Script Funktionen -->	
 		<script type="text/javascript">
 		
-		$(window).ready(function() {
+		
+		
+		    /**
+    * @author: Chris Hjorth, www.chrishjorth.com
+    */
+    var jqmReady = $.Deferred();
+    var pgReady = $.Deferred();
+    var app = {
+    //Callback for when the app is ready
+    callback: null,
+    // Application Constructor
+    initialize: function(callback) {
+    this.callback = callback;
+    var browser = document.URL.match(/^https?:/);
+    if(browser) {
+    console.log("Is web.");
+    //In case of web we ignore PG but resolve the Deferred Object to trigger initialization
+    pgReady.resolve();
+    }
+    else {
+    console.log("Is not web.");
+    this.bindEvents();
+    }
+    },
+    bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function() {
+    // The scope of 'this' is the event, hence we need to use app.
+    app.receivedEvent('deviceready');
+    },
+    receivedEvent: function(event) {
+    switch(event) {
+    case 'deviceready':
+    pgReady.resolve();
+    break;
+    }
+    }
+    };
+    $(document).on("pageinit", function(event, ui) {
+    jqmReady.resolve();
+    });
+    /**
+    * General initialization.
+    */
+    $.when(jqmReady, pgReady).then(function() {
+    //Initialization code here
 	
-
-	    //$(document).ready(function(){
- 			 $(function(){	
+	// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+			$( "#scan" ).click(function() {
+			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+		    scanner.scan(
+			  function (result) {
+				  alert("We got a barcode\n" +
+						"Result: " + result.text + "\n" +
+						"Format: " + result.format + "\n" +
+						"Cancelled: " + result.cancelled);
+			  }, 
+			  function (error) {
+				  alert("Scanning failed: " + error);
+			  }
+		    );
+			});
+	
+	
+		$(function(){	
 			 			 
 			 // Erfassen der aktuellen Position und setzen eines Markes
 			   navigator.geolocation.getCurrentPosition(function(position){
@@ -110,23 +171,20 @@
 			 );
 		
 			});
-		});
+		
+	
+	
+    if(app.callback) {
+    app.callback();
+    }
+    console.log("Frameworks ready.");
+    });
+	
+
+	    //$(document).ready(function(){
+ 			 
 			
-			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
-			$( "#scan" ).click(function() {
-			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-		    scanner.scan(
-			  function (result) {
-				  alert("We got a barcode\n" +
-						"Result: " + result.text + "\n" +
-						"Format: " + result.format + "\n" +
-						"Cancelled: " + result.cancelled);
-			  }, 
-			  function (error) {
-				  alert("Scanning failed: " + error);
-			  }
-		    );
-			});
+
 			
 					
 			
