@@ -40,16 +40,7 @@
 			// device APIs are available
 			//
 			function onDeviceReady() {
-				/*function(){
-					if(navigator.network.connection.type == Connection.NONE){
-						$("#home_network_button").text('No Internet Access')
-						.attr("data-icon", "delete")
-						.button('refresh');
-					}
-				};*/
-			
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
-				
 			}
 
 			// onSuccess Geolocation
@@ -217,7 +208,7 @@
 				<p>Du weißt nicht wo du gerade bist? Dann scanne einen QR-Code in deiner Nähe. Er wird die weiterhelfen...</p>
 				
 				<p><button id="scan" data-icon="search" data-iconpos="top">SCAN</button> </p>
-				<button id="home_network_button" data-icon="check">Internet Access Enabled</button>
+				
 				<div id="geolocation">Finding geolocation...</div>
 			</div>
 			
