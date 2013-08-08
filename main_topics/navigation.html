@@ -37,8 +37,10 @@
 		<!-- Eigene Java-Script Funktionen -->	
 		<script type="text/javascript">
 		
-		
-		$( document ).on( "pageinit", "#p1", function() {
+		$(window).load(function() {
+	
+
+	//	$( document ).on( "pageinit", "#p1", function() {
 		var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
 		
 		if ( navigator.geolocation ) {
@@ -74,7 +76,7 @@
 			});
 		}
 		
-	});
+	//});
 		
 			
 			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
@@ -94,7 +96,7 @@
 			});
 			
 					
-			
+			});
 			
 		</script>
 		
@@ -104,11 +106,20 @@
 	<!-- ######################### BODY ######################### -->
 	<body>
 		<div data-role="page"  id="p1"  data-theme="a">
+		
+			<div data-role="panel" data-theme="a" id="SidePanelp1" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+				
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#Main">Zurück</a>
 				<h1>Navigator</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="#SidePanelp1">Menü</a>
 			</div>
 			
 			<!-- ######################### Content ######################### -->
@@ -133,11 +144,20 @@
 		
 		
 		<div data-role="page"   id="p2" data-theme="a">
+		
+			<div data-role="panel" data-theme="b" id="SidePanelp2" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+		
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#Main">Zurück</a>
 				<h1>Navigator</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="#SidePanelp2">Menü</a>
 			</div>
 			
 			<!-- ######################### Content ######################### -->
@@ -163,11 +183,20 @@
 		
 		
 		<div data-role="page" id="p3"  data-theme="a">
+		
+			<div data-role="panel" data-theme="b" id="SidePanelp3" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+		
 			<!-- ######################### HEADER ######################### -->
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#Main">Zurück</a>
 				<h1>Navigator</h1>
-				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#SidePanel">Menü</a>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="#SidePanelp3">Menü</a>
 			</div>
 			
 			<!-- ######################### Content ######################### -->
