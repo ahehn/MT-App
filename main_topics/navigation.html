@@ -37,55 +37,8 @@
 		<!-- Eigene Java-Script Funktionen -->	
 		<script type="text/javascript">
 		
-		
-		
-		    /**
-    * @author: Chris Hjorth, www.chrishjorth.com
-    */
-    var jqmReady = $.Deferred();
-    var pgReady = $.Deferred();
-    var app = {
-    //Callback for when the app is ready
-    callback: null,
-    // Application Constructor
-    initialize: function(callback) {
-    this.callback = callback;
-    var browser = document.URL.match(/^https?:/);
-    if(browser) {
-    console.log("Is web.");
-    //In case of web we ignore PG but resolve the Deferred Object to trigger initialization
-    pgReady.resolve();
-    }
-    else {
-    console.log("Is not web.");
-    this.bindEvents();
-    }
-    },
-    bindEvents: function() {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    onDeviceReady: function() {
-    // The scope of 'this' is the event, hence we need to use app.
-    app.receivedEvent('deviceready');
-    },
-    receivedEvent: function(event) {
-    switch(event) {
-    case 'deviceready':
-    pgReady.resolve();
-    break;
-    }
-    }
-    };
-    $(document).on("pageinit", function(event, ui) {
-    jqmReady.resolve();
-    });
-    /**
-    * General initialization.
-    */
-    $.when(jqmReady, pgReady).then(function() {
-    //Initialization code here
 	
-	// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
 			$( "#scan" ).click(function() {
 			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 		    scanner.scan(
@@ -100,93 +53,6 @@
 			  }
 		    );
 			});
-	
-	
-		$(function(){	
-			 			 
-			 // Erfassen der aktuellen Position und setzen eines Markes
-			   navigator.geolocation.getCurrentPosition(function(position){
-			   meineLongitude = position.coords.longitude;
-			   meineLatitude = position.coords.latitude;			   
-			   var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
-			   var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
-					zoom: 17,													// Zoom-Stufe der Karte
-					center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
-					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
-					zoomControl: true,
-					zoomControlOptions: {
-						style: google.maps.ZoomControlStyle.SMALL,
-						position: google.maps.ControlPosition.LEFT_BOTTOM},
-			   };
-			   
-			   // Google Map erzeugen
-			   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-			   // Marker für aktuellen Standort einfügen
-			   var marker = new google.maps.Marker({
-				position: Latlng_position,
-				map: map,
-				title: 'Mein Standort',
-				icon: '../bilder/position.png'
-			   });
-			   
-			   // Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('../daten/gebaeude.json', function(json) {
-					$.each(json, function(bau,data) {
-						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
-						// Creating a marker and putting it on the map
-						var marker = new google.maps.Marker({
-							position: latLng,
-							map: map,
-							title: data.name,
-							icon: '../bilder/' + bau + '.png'
-						});
-					});
-				});
-			   },
-			   // Ausgabe einer Fehlermeldung sowie änderung der Anzeige-Optionen, wenn die Koordinaten der aktuellen Position nicht bestimmt werden konnten
-			   function(){window.alert('Deine Position konnte nicht ermittelt werden! :-(');
-			   var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
-			   var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
-					zoom: 15,													// Zoom-Stufe der Karte
-					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
-					mapTypeId: google.maps.MapTypeId.ROADMAP					// Definiert den Anzeige-Typ der Goole Maps Karte
-			 };
-			 // Google Map erzeugen
-			 var map = new google.maps.Map(document.getElementById('karte'), mapOptions);
-			 
-			 // Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('../daten/gebaeude.json', function(json) {
-					$.each(json, function(bau,data) {
-						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
-						// Creating a marker and putting it on the map
-						var marker = new google.maps.Marker({
-							position: latLng,
-							map: map,
-							title: data.name,
-							icon: '../bilder/' + bau + '.png'
-						});
-					});
-				});
-			  }
-			 );
-		
-			});
-		
-	
-	
-    if(app.callback) {
-    app.callback();
-    }
-    console.log("Frameworks ready.");
-    });
-	
-
-	    //$(document).ready(function(){
- 			 
-			
-
-			
-					
 			
 			
 		</script>
