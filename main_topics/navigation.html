@@ -22,8 +22,8 @@
 		<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
 
 		<!-- Einbindung von Phonegap und Barcode-Scanner Plugin -->		
-		<script type="text/javascript" src="../phonegap.js"></script>
-		<script type="text/javascript" src="../barcodescanner.js"></script>
+<!-- 		<script type="text/javascript" src="../phonegap.js"></script>
+		<script type="text/javascript" src="../barcodescanner.js"></script> -->
 		
 
 		<!-- <script src="../js/jquery.ui.map.services.min.js" type="text/javascript"></script>
@@ -36,14 +36,6 @@
 		
 		<!-- Eigene Java-Script Funktionen -->	
 		<script type="text/javascript">
-		
-		 // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
         $(document).ready(function(){
  			 $(function(){	
 			 			 
@@ -63,7 +55,7 @@
 			   };
 			   
 			   // Google Map erzeugen
-			   var map = new google.maps.Map(document.getElementById('karte'), mapOptions);
+			   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 			   // Marker für aktuellen Standort einfügen
 			   var marker = new google.maps.Marker({
 				position: Latlng_position,
@@ -95,7 +87,7 @@
 					mapTypeId: google.maps.MapTypeId.ROADMAP					// Definiert den Anzeige-Typ der Goole Maps Karte
 			 };
 			 // Google Map erzeugen
-			 var map = new google.maps.Map(document.getElementById('karte'), mapOptions);
+			 var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 			 
 			 // Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
 				$.getJSON('../daten/gebaeude.json', function(json) {
@@ -114,9 +106,7 @@
 			 );
 			});
 			});
-			};
-
-    
+ 
 
 		</script>
 		
