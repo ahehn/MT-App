@@ -45,7 +45,7 @@
 
 			// device APIs are available
 			//
-				$(document).ready(function(){
+			function onDeviceReady() {
 				var latlng = new google.maps.LatLng(49.015595,8.390175);
 				var myOptions = {
 				zoom: 17,
@@ -54,7 +54,7 @@
 				};
 				var map = new google.maps.Map(document.getElementById("map-canvas"),myOptions);
 
-				});
+			}
 		
 		
 		
