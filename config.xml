@@ -110,4 +110,6 @@
 	<access origin="maps.google.com"/>
     <access origin="maps.googleapis.com"/>
     <access origin="maps.gstatic.com"/>
+	<access origin="http://google.com" subdomains="true" browserOnly="false">
+	<access origin="https://google.com" subdomains="true" browserOnly="false">
 </widget>
