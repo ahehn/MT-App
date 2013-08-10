@@ -68,6 +68,7 @@
 				meineLongitude = position.coords.longitude;
 				meineLatitude = position.coords.latitude;
 				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
+				alert('coords success');
 				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
 						zoom: 17,													// Zoom-Stufe der Karte
 						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
@@ -79,7 +80,7 @@
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 						zoomControlOptions: {
 						style: google.maps.ZoomControlStyle.SMALL,
-						position: google.maps.ControlPosition.LEFT_BOTTOM}
+						position: google.maps.ControlPosition.LEFT_BOTTOM},
 				};
 				
 				// Google Map erzeugen
