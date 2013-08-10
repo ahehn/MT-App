@@ -44,17 +44,32 @@
 			// device APIs are available
 			//
 			function onDeviceReady() {
-				//alert('device ready!');
-				
+	
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				
 				alert('gmap start!')
-				var mapDiv = document.getElementById('map-canvas');
-				var map = new google.maps.Map(mapDiv, {
-				center: new google.maps.LatLng(37.4419, -122.1419),
-				zoom: 13,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
+			   meineLongitude = position.coords.longitude;
+			   meineLatitude = position.coords.latitude;			   
+			   var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
+			   var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
+					zoom: 17,													// Zoom-Stufe der Karte
+					center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
+					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
+					zoomControl: true,
+					zoomControlOptions: {
+						style: google.maps.ZoomControlStyle.SMALL,
+						position: google.maps.ControlPosition.LEFT_BOTTOM},
+			   };
+			   
+			   // Google Map erzeugen
+			   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+			   // Marker für aktuellen Standort einfügen
+			   var marker = new google.maps.Marker({
+				position: Latlng_position,
+				map: map,
+				title: 'Mein Standort',
+				icon: '../bilder/position.png'
+			   });
 				alert('gmap stop!');
 
 			}
