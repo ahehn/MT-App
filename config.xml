@@ -27,7 +27,7 @@
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="debug-server" required="true">
-		<param name="domain" value="http://debug.mmthska.com"/>
+		<param name="domain" value="http://debug.build.phonegap.com"/>
 		<param name="key" value="mtb2013"/>
 	</feature>
 	
