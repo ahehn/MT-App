@@ -107,9 +107,10 @@
         <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
         <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
     -->
-	<access origin="maps.google.com"/>
-    <access origin="maps.googleapis.com"/>
-    <access origin="maps.gstatic.com"/>
+	<access origin="http://gstatic.com" subdomains="true" browserOnly="false"/>
+    <access origin="http://gstatic.com" subdomains="true" browserOnly="false"/>
+    <access origin="http://googleapis.com" subdomains="true" browserOnly="false"/>
+	<access origin="https://googleapis.com" subdomains="true" browserOnly="false"/>
 	<access origin="http://google.com" subdomains="true" browserOnly="false"/>
 	<access origin="https://google.com" subdomains="true" browserOnly="false"/>
 </widget>
