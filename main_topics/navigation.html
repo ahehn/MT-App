@@ -47,32 +47,8 @@
 	
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				
-				alert('gmap start!')
-
-				   var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
-				   alert('gmap var success!')
-				   var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
-						zoom: 17,													// Zoom-Stufe der Karte
-						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
-						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
-						zoomControl: true,
-						zoomControlOptions: {
-							style: google.maps.ZoomControlStyle.SMALL,
-							position: google.maps.ControlPosition.LEFT_BOTTOM},
-				   };
-				   alert('gmap options success!')
-				   
-				   // Google Map erzeugen
-				   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-				    alert('gmap success!')
-				   // Marker für aktuellen Standort einfügen
-				   var marker = new google.maps.Marker({
-					position: Latlng_position,
-					map: map,
-					title: 'Mein Standort',
-					icon: '../bilder/position.png'
-				   });
-					alert('gmap stop!');
+				
+				
 
 			}
 
@@ -91,6 +67,30 @@
 				meineLongitude = position.coords.longitude;
 				meineLatitude = position.coords.latitude;
 				alert('coords success!')
+				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
+				alert('gmap var success!')
+				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
+						zoom: 17,													// Zoom-Stufe der Karte
+						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
+						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
+						zoomControl: true,
+						zoomControlOptions: {
+							style: google.maps.ZoomControlStyle.SMALL,
+							position: google.maps.ControlPosition.LEFT_BOTTOM},
+				};
+				alert('gmap options success!')
+				alert('gmap start!')		   
+				// Google Map erzeugen
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				alert('gmap success!')
+				// Marker für aktuellen Standort einfügen
+				var marker = new google.maps.Marker({
+				position: Latlng_position,
+				map: map,
+				title: 'Mein Standort',
+				icon: '../bilder/position.png'
+				});
+				alert('gmap stop!');
 			}
 
 			// onError Callback receives a PositionError object
