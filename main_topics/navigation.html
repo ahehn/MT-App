@@ -73,10 +73,11 @@
 						zoom: 17,													// Zoom-Stufe der Karte
 						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
-						zoomControl: true,
-						zoomControlOptions: {
-							style: google.maps.ZoomControlStyle.SMALL,
-							position: google.maps.ControlPosition.LEFT_BOTTOM},
+						panControl: false,											// panControl-Button wird deaktiviert
+						zoomControl: true,											// ZoomControl-Button wird aktiviert
+						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+						scaleControl: true,											// scaleControl wird aktiviert
+						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
 				alert('gmap options success!')
 				alert('gmap start!')		   
