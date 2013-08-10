@@ -72,7 +72,7 @@
 						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
 						panControl: false,											// panControl-Button wird deaktiviert
-						zoomControl: true,											// ZoomControl-Button wird aktiviert
+						zoomControl: false,											// ZoomControl-Button wird aktiviert
 						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
 						scaleControl: false,											// scaleControl wird aktiviert
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
@@ -116,8 +116,51 @@
 			function onError(error) {
 				alert('code: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
+				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
+				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
+				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
+					zoom: 15,													// Zoom-Stufe der Karte
+					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
+					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
+				};
+				// Google Map erzeugen
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				 
+				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
+					$.getJSON('../daten/gebaeude.json', function(json) {
+						$.each(json, function(bau,data) {
+							var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
+							// Creating a marker and putting it on the map
+							var marker = new google.maps.Marker({
+								position: latLng,
+								map: map,
+								title: data.name,
+								icon: '../bilder/' + bau + '.png'
+							});
+						});
+					});
+					  
+					  
 			}
 
+		$(document).ready(function(){
+			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+			$( "#scan" ).click(function() {
+				var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+				scanner.scan(
+				  function (result) {
+					  alert("We got a barcode\n" +
+							"Result: " + result.text + "\n" +
+							"Format: " + result.format + "\n" +
+							"Cancelled: " + result.cancelled);
+				  }, 
+				  function (error) {
+					  alert("Scanning failed: " + error);
+				  }
+				);
+			});
+		
+		});
       
 </script>
 
