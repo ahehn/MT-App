@@ -45,12 +45,8 @@
 			// device APIs are available
 			//
 			function onDeviceReady() {
-	
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				
-				
-				
-
 			}
 
 			// onSuccess Geolocation
@@ -67,8 +63,10 @@
 									'Timestamp: '          + position.timestamp                    + '<br />';
 				meineLongitude = position.coords.longitude;
 				meineLatitude = position.coords.latitude;
-				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
 				alert('coords success');
+				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
+				alert('Latlng position success');
+				
 				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
 						zoom: 17,													// Zoom-Stufe der Karte
 						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
@@ -76,7 +74,7 @@
 						panControl: false,											// panControl-Button wird deaktiviert
 						zoomControl: true,											// ZoomControl-Button wird aktiviert
 						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
-						scaleControl: true,											// scaleControl wird aktiviert
+						scaleControl: false,											// scaleControl wird aktiviert
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 						zoomControlOptions: {
 						style: google.maps.ZoomControlStyle.SMALL,
@@ -110,6 +108,7 @@
 				});
 				alert('marker buildings success');
 			}
+			
 			
 
 			// onError Callback receives a PositionError object
