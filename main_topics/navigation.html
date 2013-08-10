@@ -48,9 +48,7 @@
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				
 				alert('gmap start!')
-				   meineLongitude = position.coords.longitude;
-				   meineLatitude = position.coords.latitude;
-				alert('coords success!')
+
 				   var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
 				   alert('gmap var success!')
 				   var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
@@ -90,6 +88,9 @@
 									'Heading: '            + position.coords.heading               + '<br />' +
 									'Speed: '              + position.coords.speed                 + '<br />' +
 									'Timestamp: '          + position.timestamp                    + '<br />';
+				meineLongitude = position.coords.longitude;
+				meineLatitude = position.coords.latitude;
+				alert('coords success!')
 			}
 
 			// onError Callback receives a PositionError object
