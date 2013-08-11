@@ -34,7 +34,8 @@
 		
 				
 		<!-- GoogleMaps API -->
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBo5VVzkfgyhW1cyaUhbXvgD9ODSsZRhfo&sensor=false"></script>
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBo5VVzkfgyhW1cyaUhbXvgD9ODSsZRhfo&sensor=false"></script> -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
 		<script type="text/javascript">
 			// Wait for device API libraries to load
@@ -44,18 +45,8 @@
 			// device APIs are available
 			//
 			function onDeviceReady() {
-	
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				
-				alert('gmap start!')
-				var mapDiv = document.getElementById('map-canvas');
-				var map = new google.maps.Map(mapDiv, {
-				center: new google.maps.LatLng(37.4419, -122.1419),
-				zoom: 13,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-				alert('gmap stop!');
-
 			}
 
 			// onSuccess Geolocation
@@ -70,15 +61,106 @@
 									'Heading: '            + position.coords.heading               + '<br />' +
 									'Speed: '              + position.coords.speed                 + '<br />' +
 									'Timestamp: '          + position.timestamp                    + '<br />';
+				meineLongitude = position.coords.longitude;
+				meineLatitude = position.coords.latitude;
+				alert('coords success');
+				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
+				alert('Latlng position success');
+				
+				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
+						zoom: 17,													// Zoom-Stufe der Karte
+						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
+						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
+						panControl: false,											// panControl-Button wird deaktiviert
+						zoomControl: false,											// ZoomControl-Button wird aktiviert
+						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+						scaleControl: false,											// scaleControl wird aktiviert
+						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
+						zoomControlOptions: {
+						style: google.maps.ZoomControlStyle.SMALL,
+						position: google.maps.ControlPosition.LEFT_BOTTOM},
+				};
+				
+				// Google Map erzeugen
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				alert('gmap success');
+				// Marker für aktuellen Standort einfügen
+				var marker = new google.maps.Marker({
+				position: Latlng_position,
+				map: map,
+				title: 'Mein Standort',
+				icon: '../bilder/position.png'
+				});
+				alert('marker my position success');
+				
+				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
+				$.getJSON('../daten/gebaeude.json', function(json) {
+					$.each(json, function(bau,data) {
+						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
+						// Creating a marker and putting it on the map
+						var marker = new google.maps.Marker({
+							position: latLng,
+							map: map,
+							title: data.name,
+							icon: '../bilder/' + bau + '.png'
+						});
+					});
+				});
+				alert('marker buildings success');
 			}
+			
+			
 
 			// onError Callback receives a PositionError object
 			//
 			function onError(error) {
 				alert('code: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
+				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
+				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
+				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
+					zoom: 15,													// Zoom-Stufe der Karte
+					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
+					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
+				};
+				// Google Map erzeugen
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				 
+				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
+					$.getJSON('../daten/gebaeude.json', function(json) {
+						$.each(json, function(bau,data) {
+							var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
+							// Creating a marker and putting it on the map
+							var marker = new google.maps.Marker({
+								position: latLng,
+								map: map,
+								title: data.name,
+								icon: '../bilder/' + bau + '.png'
+							});
+						});
+					});
+					  
+					  
 			}
 
+		$(document).ready(function(){
+			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
+			$( "#scan" ).click(function() {
+				var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+				scanner.scan(
+				  function (result) {
+					  alert("We got a barcode\n" +
+							"Result: " + result.text + "\n" +
+							"Format: " + result.format + "\n" +
+							"Cancelled: " + result.cancelled);
+				  }, 
+				  function (error) {
+					  alert("Scanning failed: " + error);
+				  }
+				);
+			});
+		
+		});
       
 </script>
 
