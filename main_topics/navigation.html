@@ -75,7 +75,7 @@
 				// Google Map erzeugen
 				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 				
-				set_position;
+				set_position(Latlng_position, map);
 
 				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
 				$.getJSON('../daten/gebaeude.json', function(json) {
@@ -93,10 +93,10 @@
 				alert('marker buildings success');
 			}
 			
-			function set_position(){
+			function set_position(myPosition, map){
 				// Marker für aktuellen Standort einfügen
 				var marker = new google.maps.Marker({
-					position: Latlng_position,
+					position: myPosition,
 					map: map,
 					title: 'Mein Standort',
 					icon: '../bilder/position.png'
