@@ -21,7 +21,9 @@ $(document).ready(function(){
 							alert('OK! Der QR-Code hat' + result.text.length + 'Zeichen');
 							stCode = result.text;
 							$.getJSON('../daten/qrcodes.json', function(json) {
+								alert('getJSON ok!');
 								$.each(json, function(code,data) {
+									alert('eachJSON ok!');
 									if(code == stCode){
 										alert('Du bist hier:' + data.dame + ' Etage:' + data.etage + ' Gebäude:'+ data.bau);
 									};
