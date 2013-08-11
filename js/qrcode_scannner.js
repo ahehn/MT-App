@@ -19,10 +19,11 @@ $(document).ready(function(){
 						// Check length of Result 
 						if(result.text.length == 11){
 							alert('OK! Der QR-Code hat' + result.text.length + 'Zeichen');
-							$.getJSON('../daten/qrcodes.json', function(json, result) {
-								$.each(json, function(code,data, result) {
-									if(code == result.text){
-										alert('Du bist hier:' + data.dame + ' Etage:' + data.etage + ' Gebäude:'+ data.bau)
+							stCode = result.text;
+							$.getJSON('../daten/qrcodes.json', function(json) {
+								$.each(json, function(code,data) {
+									if(code == stCode){
+										alert('Du bist hier:' + data.dame + ' Etage:' + data.etage + ' Gebäude:'+ data.bau);
 									};
 								});
 							});	
