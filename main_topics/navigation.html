@@ -73,7 +73,7 @@
 				};
 				
 				// Google Map erzeugen
-				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				create_map(mapOptions);
 				
 				set_position(Latlng_position, map);
 
@@ -92,23 +92,11 @@
 				});
 				alert('marker buildings success');
 			}
-			
-			function set_position(myPosition, map){
-				// Marker für aktuellen Standort einfügen
-				var marker = new google.maps.Marker({
-					position: myPosition,
-					map: map,
-					title: 'Mein Standort',
-					icon: '../bilder/position.png'
-				});
-				alert('marker my position success');
-			}
 
+						
 			// onError Callback receives a PositionError object
 			//
 			function onError(error) {
-				alert('code: '    + error.code    + '\n' +
-					  'message: ' + error.message + '\n');
 				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
 				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
 				var mapOptions = {												// Definition der Anzeige-Optionen der Google-Maps karte
@@ -122,7 +110,7 @@
 					streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
 				// Google Map erzeugen
-				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				create_map(mapOptions);
 				 
 				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
 				$.getJSON('../daten/gebaeude.json', function(json) {
@@ -139,7 +127,29 @@
 				});
 				alert('marker buildings success');		  		  
 			}
-      
+  
+  
+			// Set the marker at the position of the user in the Google Map 
+			//
+			function set_position(myPosition, map){
+				// Marker für aktuellen Standort einfügen
+				var marker = new google.maps.Marker({
+					position: myPosition,
+					map: map,
+					title: 'Mein Standort',
+					icon: '../bilder/position.png'
+				});
+				alert('marker my position success');
+			}
+
+			
+			// Create the Google Map with the delivered mapOptions in the div-Objekt "map-canvas"
+			//
+			function create_map(options){
+				var map = new google.maps.Map(document.getElementById('map-canvas'), options);
+			}
+
+  
 </script>
 
 
