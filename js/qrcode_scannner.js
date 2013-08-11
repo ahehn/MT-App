@@ -21,11 +21,20 @@ $(document).ready(function(){
 							alert('OK! Der QR-Code hat' + result.text.length + 'Zeichen');
 							stCode = result.text;
 							$.getJSON('../daten/qrcodes.json', function(json) {
+								//Flag for checking if there is a  invalid 11 sing long qr-code
+								f_validcode=false;
 								$.each(json, function(code,data) {
 									if(code == stCode){
+										f_validcode = true;
 										alert('Du bist hier:' + data.name + ' Etage:' + data.etage + ' Gebäude:'+ data.bau);
 									};
 								});
+								
+								//Checking if f_validcode Flag is false
+								if(f_validcode==false){
+									alert('Falscher QR-Code!!!!! Richtige Länge');
+								}
+								else{ alert('alles gut :-)'); }
 							});	
 						}
 						else{
