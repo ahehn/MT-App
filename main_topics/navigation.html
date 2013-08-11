@@ -31,7 +31,7 @@
 				
 		<!-- GoogleMaps API -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-		<script type="text/javascript" src="../js/scanner.js"></script>
+		<script type="text/javascript" src="../js/qrcode_scannner.js"></script>
 		<script type="text/javascript">
 			// Wait for device API libraries to load
 			//
@@ -75,7 +75,7 @@
 				
 				create_map(mapOptions);
 				set_position(Latlng_position, map);
-				set_markers;
+				set_markers(map);
 			}
 
 		
@@ -96,7 +96,7 @@
 				};
 				// Google Map erzeugen
 				create_map(mapOptions);
-				setmarkers; 
+				set_markers(map); 
 			}
   
   		
@@ -123,7 +123,7 @@
 			
   			// Set the marker at the position of the user in the Google Map 
 			//
-			function set_markers(){
+			function set_markers(map){
 				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
 				$.getJSON('../daten/gebaeude.json', function(json) {
 					$.each(json, function(bau,data) {
