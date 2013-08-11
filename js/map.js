@@ -14,5 +14,5 @@ function set_marker(){
 			});
 		});
 	});
-alert('marker buildings success');
+	alert('marker buildings success');
 }
