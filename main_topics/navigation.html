@@ -31,7 +31,7 @@
 				
 		<!-- GoogleMaps API -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-		
+		<script type="text/javascript" src="../js/scanner.js"></script>
 		<script type="text/javascript">
 			// Wait for device API libraries to load
 			//
@@ -58,27 +58,23 @@
 									'Timestamp: '          + position.timestamp                    + '<br />';
 				meineLongitude = position.coords.longitude;
 				meineLatitude = position.coords.latitude;
-				alert('coords success');
+
 				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
-				alert('Latlng position success');
 				
 				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
 						zoom: 17,													// Zoom-Stufe der Karte
-						center: Latlng_position,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
+						center: Latlng_position,									// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
 						panControl: false,											// panControl-Button wird deaktiviert
 						zoomControl: false,											// ZoomControl-Button wird aktiviert
 						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
-						scaleControl: false,											// scaleControl wird aktiviert
+						scaleControl: false,										// scaleControl wird aktiviert
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
-						zoomControlOptions: {
-						style: google.maps.ZoomControlStyle.SMALL,
-						position: google.maps.ControlPosition.LEFT_BOTTOM},
 				};
 				
 				// Google Map erzeugen
 				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-				alert('gmap success');
+
 				// Marker für aktuellen Standort einfügen
 				var marker = new google.maps.Marker({
 				position: Latlng_position,
@@ -112,10 +108,15 @@
 					  'message: ' + error.message + '\n');
 				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
 				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
-				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
+				var mapOptions = {												// Definition der Anzeige-Optionen der Google-Maps karte
 					zoom: 15,													// Zoom-Stufe der Karte
 					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
+					panControl: false,											// panControl-Button wird deaktiviert
+					zoomControl: false,											// ZoomControl-Button wird aktiviert
+					mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+					scaleControl: false,										// scaleControl wird aktiviert
+					streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
 				// Google Map erzeugen
 				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -133,29 +134,8 @@
 						});
 					});
 				});
-				alert('marker buildings success');
-					  
-					  
+				alert('marker buildings success');		  		  
 			}
-			
-		$(document).ready(function(){
-			// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
-			$( "#scan" ).click(function() {
-				var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-				scanner.scan(
-				  function (result) {
-					  alert("We got a barcode\n" +
-							"Result: " + result.text + "\n" +
-							"Format: " + result.format + "\n" +
-							"Cancelled: " + result.cancelled);
-				  }, 
-				  function (error) {
-					  alert("Scanning failed: " + error);
-				  }
-				);
-			});
-		
-		});
       
 </script>
 
