@@ -11,10 +11,10 @@ $(document).ready(function(){
 						"Cancelled: " + result.cancelled);*/
 				// Check if Result is a QR-Code
 				if(result.format == 'QR_CODE'){
-					alert('das ist ein QR-Code')
+					alert('das ist ein QR-Code');
 				}
 				else{
-				no_qr;
+					alert('Sorry, aber das ist kein QR-Code!');
 				}		
 						
 			  }, 
@@ -29,6 +29,6 @@ function scan_invalid(){
 	alert('Sorry, aber das ist kein gültiger QR-Code zum Lokalisieren der Position!');
 }
 
-function no_qr(){
+/*function no_qr(){
 	alert('Sorry, aber das ist kein QR-Code!');
-}
+}*/
