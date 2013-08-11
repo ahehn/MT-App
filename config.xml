@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.mechatronik-karlsruhe"
+        id        = "de.hska.mt-app"
         version   = "1.0.0">
 
     <name>
@@ -28,7 +28,7 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="debug-server" required="true">
 		<param name="domain" value="http://debug.build.phonegap.com"/>
-		<param name="key" value="mtb2013"/>
+		<param name="key" value="de.hska.mt-app"/>
 	</feature>
 	
 
