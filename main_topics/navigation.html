@@ -41,9 +41,9 @@
 			//
 			function onDeviceReady() {
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
-				
 			}
 
+			
 			// onSuccess Geolocation
 			//
 			function onSuccess(position) {
@@ -56,9 +56,10 @@
 									'Heading: '            + position.coords.heading               + '<br />' +
 									'Speed: '              + position.coords.speed                 + '<br />' +
 									'Timestamp: '          + position.timestamp                    + '<br />';
+									
+									
 				meineLongitude = position.coords.longitude;
 				meineLatitude = position.coords.latitude;
-
 				var Latlng_position = new google.maps.LatLng(meineLatitude, meineLongitude); // Schreibt aktuelle Position in Koordinaten-Variable für die aktuellen Position
 				
 				var mapOptions = {													// Definition der Anzeige-Optionen der Google-Maps karte
@@ -72,29 +73,13 @@
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
 				
-				// Google Map erzeugen
 				create_map(mapOptions);
-				
 				set_position(Latlng_position, map);
-
-				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('../daten/gebaeude.json', function(json) {
-					$.each(json, function(bau,data) {
-						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
-						// Creating a marker and putting it on the map
-						var marker = new google.maps.Marker({
-							position: latLng,
-							map: map,
-							title: data.name,
-							icon: '../bilder/' + bau + '.png'
-						});
-					});
-				});
-				alert('marker buildings success');
+				set_markers;
 			}
 
-						
-			// onError Callback receives a PositionError object
+		
+			// onError Callback creates the Google Map only with the HsKA building markers
 			//
 			function onError(error) {
 				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
@@ -111,7 +96,34 @@
 				};
 				// Google Map erzeugen
 				create_map(mapOptions);
-				 
+				setmarkers; 
+			}
+  
+  		
+			// Create the Google Map with the delivered mapOptions in the div-Objekt "map-canvas"
+			//
+			function create_map(options){
+				map = new google.maps.Map(document.getElementById('map-canvas'), options);
+			}
+
+			
+  			// Set the marker at the position of the user in the Google Map 
+			//
+			function set_position(myPosition, map){
+				// Marker für aktuellen Standort einfügen
+				var marker = new google.maps.Marker({
+					position: myPosition,
+					map: map,
+					title: 'Mein Standort',
+					icon: '../bilder/position.png'
+				});
+				alert('marker my position success');
+			}
+			
+			
+  			// Set the marker at the position of the user in the Google Map 
+			//
+			function set_markers(){
 				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
 				$.getJSON('../daten/gebaeude.json', function(json) {
 					$.each(json, function(bau,data) {
@@ -125,31 +137,8 @@
 						});
 					});
 				});
-				alert('marker buildings success');		  		  
-			}
-  
-  
-			// Set the marker at the position of the user in the Google Map 
-			//
-			function set_position(myPosition, map){
-				// Marker für aktuellen Standort einfügen
-				var marker = new google.maps.Marker({
-					position: myPosition,
-					map: map,
-					title: 'Mein Standort',
-					icon: '../bilder/position.png'
-				});
-				alert('marker my position success');
-			}
-
-			
-			// Create the Google Map with the delivered mapOptions in the div-Objekt "map-canvas"
-			//
-			function create_map(options){
-				map = new google.maps.Map(document.getElementById('map-canvas'), options);
-			}
-
-  
+				alert('marker buildings success');
+			}				
 </script>
 
 
