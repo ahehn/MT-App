@@ -1,0 +1,52 @@
+{
+	"HsKA_F_0001": {
+		"name": "Haupteingang",
+		"etage": "EG",
+		"bau":	"F"
+	},
+	"HsKA_F_0002": {
+		"name": "LMHS",
+		"etage": "KG",
+		"bau":	"F"
+	},
+	"HsKA_F_0003": {
+		"name": "Sekretariat",
+		"etage": "1. OG",
+		"bau":	"F"
+	},
+	"HsKA_F_0004": {
+		"name": "Übergang zum Gebäude LI",
+		"etage": "EG",
+		"bau":	"F"
+	},
+	"HsKA_F_0005": {
+		"name": "Übergang zum Gebäude LI",
+		"etage": "1. OG",
+		"bau":	"F"
+	},
+	"HsKA_F_0006": {
+		"name": "Career Center",
+		"etage": "3. OG",
+		"bau":	"F"
+	},
+	"HsKA_F_0007": {
+		"name": "Fachschaftsraum",
+		"etage": "EG",
+		"bau":	"F"
+	},
+	"HsKA_F_0008": {
+		"name": "Übrig 1",
+		"etage": "1. OG",
+		"bau":	"F"
+	},
+	"HsKA_F_0009": {
+		"name": "Übrig 2",
+		"etage": "2. OG",
+		"bau":	"F"
+	},
+	"HsKA_F_0010": {
+		"name": "Übrig 3",
+		"etage": "3. OG",
+		"bau":	"F"
+	}
+}

@@ -41,6 +41,7 @@
 			//
 			function onDeviceReady() {
 				navigator.geolocation.getCurrentPosition(onSuccess, onError);
+				
 			}
 
 			
@@ -117,7 +118,6 @@
 					title: 'Mein Standort',
 					icon: '../bilder/position.png'
 				});
-				alert('marker my position success');
 			}
 			
 			
@@ -137,7 +137,6 @@
 						});
 					});
 				});
-				alert('marker buildings success');
 			}				
 </script>
 
