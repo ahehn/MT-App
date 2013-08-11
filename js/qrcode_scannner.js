@@ -1,5 +1,8 @@
 
 $(document).ready(function(){
+		var qrcode_length = 11;
+
+
 		// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
 		$( "#scan" ).click(function() {
 			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
@@ -13,32 +16,28 @@ $(document).ready(function(){
 				if(result.cancelled == false){
 				
 					// Check if Result is a QR-Code
-					if(result.format == 'QR_CODE'){
-						alert('das ist ein QR-Code');
-						
+					if(result.format == 'QR_CODE'){				
 						// Check length of Result 
-						if(result.text.length == 11){
-							alert('OK! Der QR-Code hat' + result.text.length + 'Zeichen');
+						if(result.text.length == qrcode_length){
 							stCode = result.text;
 							$.getJSON('../daten/qrcodes.json', function(json) {
-								//Flag for checking if there is a  invalid 11 sing long qr-code
+								//Flag for checking if there is a  invalid qrcode_length sing long qr-code
 								f_validcode=false;
 								$.each(json, function(code,data) {
 									if(code == stCode){
 										f_validcode = true;
-										alert('Du bist hier:' + data.name + ' Etage:' + data.etage + ' Gebäude:'+ data.bau);
+										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
 									};
 								});
 								
 								//Checking if f_validcode Flag is false
 								if(f_validcode==false){
-									alert('Falscher QR-Code!!!!! Richtige Länge');
+									alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!2');
 								}
-								else{ alert('alles gut :-)'); }
 							});	
 						}
 						else{
-							alert('FEHLER in der Textlänge:' + result.text.length);
+							alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!1');
 						}
 
 						
@@ -55,10 +54,3 @@ $(document).ready(function(){
 		});
 	});
 	
-function scan_invalid(){
-	alert('Sorry, aber das ist kein gültiger QR-Code zum Lokalisieren der Position!');
-}
-
-/*function no_qr(){
-	alert('Sorry, aber das ist kein QR-Code!');
-}*/
