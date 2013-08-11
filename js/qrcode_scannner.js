@@ -9,14 +9,32 @@ $(document).ready(function(){
 						"Result: " + result.text + "\n" +
 						"Format: " + result.format + "\n" +
 						"Cancelled: " + result.cancelled);*/
-				// Check if Result is a QR-Code
-				if(result.format == 'QR_CODE'){
-					alert('das ist ein QR-Code');
-				}
-				else{
-					alert('Sorry, aber das ist kein QR-Code!');
-				}		
+				// Check if scan is not cancelled
+				if(result.cancelled == false){
+				
+					// Check if Result is a QR-Code
+					if(result.format == 'QR_CODE'){
+						alert('das ist ein QR-Code');
 						
+						// Check length of Result 
+						if(result.text.length == 11){
+							alert('OK! Der QR-Code hat' + result.text.length + 'Zeichen');
+							
+							
+						}
+						else{
+							alert('FEHLER in der Textlänge:' + result.text.length);
+						}
+						
+						
+						
+						
+						
+					}
+					else{
+						alert('Sorry, aber das ist kein QR-Code!');
+					}		
+				};		
 			  }, 
 			  function (error) {
 				  alert("Scanning failed: " + error);
