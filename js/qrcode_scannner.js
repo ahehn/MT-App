@@ -34,7 +34,7 @@ $(document).ready(function(){
 								//Checking if f_validcode Flag is false
 								if(f_validcode==false){
 									alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!2');
-									$.mobile.changePage('#invalid', {transition: 'slidedown', role: 'dialog'});
+									$.mobile.changePage('#invalid', {transition: 'slidedown', role: 'popup'});
 								}
 							});	
 						}
