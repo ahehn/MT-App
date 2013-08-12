@@ -302,10 +302,35 @@
 		</div>
 		
 		
-		<div data-rel="dialog" id="myPlace" data-corners="false"> Hallo hier bist du!!! </div>
-		<div data-rel="dialog" id="invalid">
-			 <div data-role="header" data-position="fixed"> Warning! </div>
-			 <div data-role="content">Du depp!!!</div>
+		<div data-rel="dialog" id="myPlace" data-corners="false" data-close-btn="right" data-theme="a">
+		
+			<div data-role="header">
+				<h1>Dein Standort</h1>
+			</div>
+			
+			<div data-role="content">
+				<h1>Right close button</h1>
+				<p>This is a regular page, styled as a dialog. To create a dialog, just link to a normal page and include a transition and <code>data-rel="dialog"</code> attribute.</p>
+				<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b">Ok, I get it</a>   
+			</div>
+			
+		</div>	
+		
+		
+		
+		
+		<div data-rel="dialog" id="invalid" data-corners="false" data-close-btn="right"  data-theme="b">
+		
+			<div data-role="header">
+				<h1>Fehler!</h1>
+			</div>
+			
+			<div data-role="content">
+				<h1>Right close button</h1>
+				<p>This is a regular page, styled as a dialog. To create a dialog, just link to a normal page and include a transition and <code>data-rel="dialog"</code> attribute.</p>
+				<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b">Ok, I get it</a>   
+			</div>
+			
 		</div>	
 	
 	
