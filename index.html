@@ -20,33 +20,10 @@
 		<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 		<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
 		<script type="text/javascript" src="js/video.js"></script>
+		<script type="text/javascript" src="js/photoswipe.js"></script>
 		
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script type="text/javascript" src="barcodescanner.js"></script>
-
-		<script type="text/javascript">			
-			(function(window, $, PhotoSwipe){				
-				$(document).ready(function(){					
-					$('div.gallery-page')
-						.on('pageshow', function(e){							
-							var 
-								currentPage = $(e.target),
-								options = {},
-								photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));								
-							return true;							
-						})						
-						.on('pagehide', function(e){							
-							var 
-								currentPage = $(e.target),
-								photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
-							if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
-								PhotoSwipe.detatch(photoSwipeInstance);
-							}							
-							return true;							
-						});					
-				});			
-			}(window, window.jQuery, window.Code.PhotoSwipe));			
-		</script>
 	</head>
 
 	<!-- BODY -->
@@ -224,38 +201,43 @@
 				<div data-role="collapsible-set" data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 					<div data-role="collapsible">
 						<h1>Was ist Mechatronik?</h1>
-						<video id="video" controls width="100%" poster="bilder/mediathek/thumbs/mechatronik.png">
+						<video id="video1" controls width="100%" poster="bilder/mediathek/thumbs/mechatronik.png">
 							<source src="http://www.mmt-hska.de/videos/mechatronik.mp4">
 							<source src="http://www.mmt-hska.de/videos/mechatronik.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						</video>
 					</div>
 					<div data-role="collapsible">
 						<h1>Imagevideo 1 der Hochschule</h1>
-						<video controls width="100%" poster="bilder/mediathek/thumbs/imagefilm.png">
+						<video id="video2" controls width="100%" poster="bilder/mediathek/thumbs/imagefilm.png">
+							<source src="http://www.mmt-hska.de/videos/imagefilm_1.mp4">
 							<source src="http://www.mmt-hska.de/videos/imagefilm_1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						</video>
 					</div>
 					<div data-role="collapsible">
 						<h1>Imagevideo 2 der Hochschule</h1>
-						<video controls width="100%" poster="bilder/mediathek/thumbs/imagefilm.png">
+						<video id="video3" controls width="100%" poster="bilder/mediathek/thumbs/imagefilm.png">
+							<source src="http://www.mmt-hska.de/videos/imagefilm_2.mp4">
 							<source src="http://www.mmt-hska.de/videos/imagefilm_2.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						</video>
 					</div>
 					<div data-role="collapsible">
 						<h1>Projektvideo mechatronischer Kreisel</h1>
-						<video controls width="100%" poster="bilder/mediathek/thumbs/mech_kreisel.png">
+						<video id="video4" controls width="100%" poster="bilder/mediathek/thumbs/mech_kreisel.png">
+							<source src="http://www.mmt-hska.de/videos/mech_kreisel.mp4">
 							<source src="http://www.mmt-hska.de/videos/mech_kreisel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						</video>
 					</div>
 					<div data-role="collapsible">
 						<h1>Projektvideo Kugelbalance</h1>
-						<video controls width="100%" poster="bilder/mediathek/thumbs/kugelbalance.png">
+						<video id="video5" controls width="100%" poster="bilder/mediathek/thumbs/kugelbalance.png">
+							<source src="http://www.mmt-hska.de/videos/kugelbalance.mp4">
 							<source src="http://www.mmt-hska.de/videos/kugelbalance.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						</video>
 					</div>
 					<div data-role="collapsible">
 						<h1>E-Quickie</h1>
-						<video controls width="100%" poster="bilder/mediathek/thumbs/e_quickie.png">
+						<video id="video6" controls width="100%" poster="bilder/mediathek/thumbs/e_quickie.png">
+							<source src="http://www.mmt-hska.de/videos/e_quickie.mp4">
 							<source src="http://www.mmt-hska.de/videos/e_quickie.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						</video>
 					</div>
