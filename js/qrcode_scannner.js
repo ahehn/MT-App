@@ -27,12 +27,14 @@ $(document).ready(function(){
 									if(code == stCode){
 										f_validcode = true;
 										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
+										$("#myPlace").popup();
 									};
 								});
 								
 								//Checking if f_validcode Flag is false
 								if(f_validcode==false){
 									alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!2');
+									$.mobile.changePage('#invalid', {transition: 'pop', role: 'dialog'});
 								}
 							});	
 						}
