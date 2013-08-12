@@ -12,14 +12,40 @@
 		<link rel="stylesheet" type="text/css" href="styles/main_menu.css" />
 		<link rel="stylesheet" type="text/css" href="styles/jquery.mobile.structure-1.3.2.min.css" />
 		<link rel="stylesheet" type="text/css" href="styles/themes/20130807_MT_Theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="styles/photoswipe.css" />
 		
 		<!-- Einbindung von jQuery und jQuery mobile -->
+		<script type="text/javascript" src="js/klass.min.js"></script>
 		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
 		
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script type="text/javascript" src="barcodescanner.js"></script>
 
+		<script type="text/javascript">			
+			(function(window, $, PhotoSwipe){				
+				$(document).ready(function(){					
+					$('div.gallery-page')
+						.on('pageshow', function(e){							
+							var 
+								currentPage = $(e.target),
+								options = {},
+								photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));								
+							return true;							
+						})						
+						.on('pagehide', function(e){							
+							var 
+								currentPage = $(e.target),
+								photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+							if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
+								PhotoSwipe.detatch(photoSwipeInstance);
+							}							
+							return true;							
+						});					
+				});			
+			}(window, window.jQuery, window.Code.PhotoSwipe));			
+		</script>
 	</head>
 
 	<!-- BODY -->
@@ -170,6 +196,30 @@
 			</div>
 
 			<div data-role="content">
+				<div data-role="controlgroup">
+					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Videos">Videos</a>
+					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Bildergalerie">Bildergalerie</a>
+				</div>
+			</div>
+		</div>
+		
+		<div data-role="page" data-theme="a" id="Videos" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelVideos" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
+			<div data-role="header" data-position="fixed">
+				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studiengang">Zurück</a>
+				<h1>Videos</h1>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelVideos">Menü</a>
+			</div>
+
+			<div data-role="content">
 				<div data-role="collapsible-set" data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 					<div data-role="collapsible">
 						<h1>Was ist Mechatronik?</h1>
@@ -208,6 +258,39 @@
 						</video>
 					</div>
 				</div>
+			</div>
+		</div>
+		
+		<div data-role="page" data-theme="a" id="Bildergalerie" data-title="Hochschule Karlsruhe - Studiengang Mechatronik" class="gallery-page">
+			<!-- Side panel -->	
+			<div data-role="panel" data-theme="b" id="SidePanelBildergalerie" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="b" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+
+			<div data-role="header" data-position="fixed">
+				<a data-role="button" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-rel="back" href="#Studiengang">Zurück</a>
+				<h1>Bildergalerie</h1>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" href="#SidePanelBildergalerie">Menü</a>
+			</div>
+
+			<div data-role="content">
+				<ul class="gallery">
+					<li><a href="bilder/mediathek/Sommerfest1.jpg"	rel="external"><img src="bilder/mediathek/Sommerfest1.jpg"	alt="Sommerfest 2013" /></a></li>
+					<li><a href="bilder/mediathek/Sommerfest2.jpg"	rel="external"><img src="bilder/mediathek/Sommerfest2.jpg"	alt="Sommerfest 2013" /></a></li>
+					<li><a href="bilder/mediathek/Sommerfest3.jpg"	rel="external"><img src="bilder/mediathek/Sommerfest3.jpg"	alt="Sommerfest 2013" /></a></li>
+					<li><a href="bilder/mediathek/Sommerfest4.jpg"	rel="external"><img src="bilder/mediathek/Sommerfest4.jpg"	alt="Sommerfest 2013" /></a></li>
+					<li><a href="bilder/mediathek/Sommerfest5.jpg"	rel="external"><img src="bilder/mediathek/Sommerfest5.jpg"	alt="Sommerfest 2013" /></a></li>
+					<li><a href="bilder/mediathek/LKW1.jpg"			rel="external"><img src="bilder/mediathek/LKW1.jpg"			alt="Vorlesung einmal anders..." /></a></li>
+					<li><a href="bilder/mediathek/LKW2.jpg"			rel="external"><img src="bilder/mediathek/LKW2.jpg"			alt="Vorlesung einmal anders..." /></a></li>
+					<li><a href="bilder/mediathek/LKW3.jpg"			rel="external"><img src="bilder/mediathek/LKW3.jpg"			alt="Vorlesung einmal anders..." /></a></li>
+					<li><a href="bilder/mediathek/MT1.jpg"			rel="external"><img src="bilder/mediathek/MT1.jpg"			alt="???" /></a></li>
+					<li><a href="bilder/mediathek/MT2.jpg"			rel="external"><img src="bilder/mediathek/MT2.jpg"			alt="???" /></a></li>
+					<li><a href="bilder/mediathek/EQUICKIE.jpg"		rel="external"><img src="bilder/mediathek/EQUICKIE.jpg"		alt="E-Quickie" /></a></li>
+				</ul>
 			</div>
 		</div>
 		
