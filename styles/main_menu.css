@@ -6,3 +6,11 @@ div#Main img{
 	vertical-align: bottom;
     border: none;
 }
+
+.ui-content {
+	background: url(themes/images/bg.png);
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: auto 100%;
+	background-position: left bottom;
+}​

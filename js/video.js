@@ -13,5 +13,7 @@ function setValue() {
 	video[4].addEventListener('click',function(){video[4].play();},false);
 	video.push(document.getElementById("video6"));
 	video[5].addEventListener('click',function(){video[5].play();},false);
+	video.push(document.getElementById("video7"));
+	video[6].addEventListener('click',function(){video[6].play();},false);
 }
 window.onload = setValue;

@@ -59,12 +59,12 @@ div.ps-zoom-pan-rotate *  { display: block; }
 /* Carousel */
 div.ps-carousel-item-loading 
 { 
-	background: url(../bilder/PhotoSwipe/loader.gif) no-repeat center center; 
+	background: url(../bilder/photoswipe/loader.gif) no-repeat center center; 
 }
 
 div.ps-carousel-item-error 
 { 
-	background: url(../bilder/PhotoSwipe/error.gif) no-repeat center center; 
+	background: url(../bilder/photoswipe/error.gif) no-repeat center center; 
 }
 
 
@@ -132,7 +132,7 @@ div.ps-toolbar div div.ps-toolbar-content
 	width: 44px;
 	height: 44px;
 	margin: 0 auto 0;
-	background-image: url(../bilder/PhotoSwipe/icons.png);
+	background-image: url(../bilder/photoswipe/icons.png);
 	background-repeat: no-repeat;
 }
 
@@ -177,6 +177,6 @@ div.ps-toolbar-play div.ps-toolbar-content
 		-o-background-size: 176px 88px;
 		-webkit-background-size: 176px 88px;
 		background-size: 176px 88px;
-		background-image: url(../bilder/PhotoSwipe/icons@2x.png);
+		background-image: url(../bilder/photoswipe/icons@2x.png);
 	}
 }

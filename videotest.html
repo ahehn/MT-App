@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Demo: HTML5 video controls with JavaScript</title>
+		
+		<script type="text/javascript">
+			var video = [];
+			function setValue() {
+				<!-- for (var i = 0; i<3; i++) { -->
+				video.push(document.getElementById("video1"));
+				video[0].addEventListener('click',function(){video[0].play();},false);
+				video.push(document.getElementById("video2"));
+				video[1].addEventListener('click',function(){video[1].play();},false);
+				video.push(document.getElementById("video3"));
+				video[2].addEventListener('click',function(){video[2].play();},false);
+			}
+			window.onload = setValue;
+		</script>
+	</head>
+
+	<body>
+		<video controls preload="none" width="100%" poster="bilder/mediathek/thumbs/e_quickie.png">
+			<video>
+				<source src="http://www.mmt-hska.de/videos/mech_kreisel.mp4">
+				<source src="http://www.mmt-hska.de/videos/mech_kreisel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			</video>
+			<p>Fehler beim Laden des Videos! Browser unterstützt das leider nicht!</p>
+		</video>
+		<video controls preload="none" id="video2" width="100%" poster="bilder/mediathek/thumbs/e_quickie.png">
+			<source src="http://www.mmt-hska.de/videos/e_quickie.mp4">
+			<source src="http://www.mmt-hska.de/videos/e_quickie.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			<p>Fehler beim Laden des Videos! Browser unterstützt das leider nicht!</p>
+		</video>
+		<video controls preload="none" id="video3" width="100%" poster="bilder/mediathek/thumbs/e_quickie.png">
+			<source src="http://www.mmt-hska.de/videos/kugelbalance.mp4">
+			<source src="http://www.mmt-hska.de/videos/kugelbalance.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			<p>Fehler beim Laden des Videos! Browser unterstützt das leider nicht!</p>
+		</video>
+	</body>
+</html>
