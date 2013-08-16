@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/* Bilder für Menüpunkte im Hauptmenü */
+div#Main img{
+	margin-left: 10%;
+	vertical-align: bottom;
+    border: none;
+}
+
+/* Hintergrundgrafik für alle Seiten */
+.ui-content {
+	background: url(themes/images/bg.png);
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: auto 100%;
+	background-position: left bottom;
+}​
+
+/* ??? */
+div#map-canvas {
+	top: 0px !important;
+	right: 0px !important;
+	bottom: 0px !important;
+	left: 0px !important;
+	background-image: url(themes/images/gears.gif) !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+}
