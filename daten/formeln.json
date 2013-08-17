@@ -1,0 +1,84 @@
+var quizjson = {
+	"Fragen": [
+		{
+			"Frage": "Der zurückgelegt Weg eines Objekts ist das Produkt aus der quadrierten Zeit und s = __ t²",
+			"Antworten": [
+				{"Option": "½ mal der Geschwindigkeit v",	"korrekt": true},
+				{"Option": "½ mal der Beschleunigung a",	"korrekt": false},
+				{"Option": "seiner Masse m",				"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Die Fläche innerhalb eines Kreises ist das Produkt aus dem quadrierten Radius r und A = __ r²",
+			"Antworten": [
+				{"Option": "der Kreiszahl Pi",			"korrekt": true},
+				{"Option": "der Eulersche Zahl e",		"korrekt": false},
+				{"Option": "dem Umfang u des Kreises",	"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Die Lageenergie (potientelle Energie) eines Objekts ist die Produkt aus seiner Masse, der Höhe, in der er sich befindet und	E = m * __ * h",
+			"Antworten": [
+				{"Option": "der Erdbeschleunigung g",	"korrekt": true},
+				{"Option": "seiner Masse m",			"korrekt": false},
+				{"Option": "seiner Dichte rho",			"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Die Spannung an einem Widerstand R ist das Produkt aus R und	U = R * __",
+			"Antworten": [
+				{"Option": "dem Widerstand R selbst",	"korrekt": true},
+				{"Option": "dem Strom I",				"korrekt": false},
+				{"Option": "dem Leitwert G",			"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Was ergibt das Produkt aus Kondesatorkapazität und Spannung?	__ = C * U",
+			"Antworten": [
+				{"Option": "Ladung Q",						"korrekt": true},	
+				{"Option": "Strom I",						"korrekt": false},
+				{"Option": "Dielektrizitätskonstante eps",	"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Was muss mit einem Leiterstück der Länge l passieren, damit auf es die Lorentzkraft F_L wirkt?	F_L = __ * l * B",
+			"Antworten": [
+				{"Option": "Es muss von einem Strom I durchflossen werden",		"korrekt": true},
+				{"Option": "Es muss sich mit der Geschwindigkeit v bewegen",	"korrekt": false},
+				{"Option": "Es muss den Widerstand R bieten",					"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Was muss größer werden, damit das elektrische Feld an einem Kondensator mit der Spannung U kleiner wird?	E = U / __",
+			"Antworten": [
+				{"Option": "Kapazität C",					"korrekt": true},
+				{"Option": "Plattenabstand d",				"korrekt": false},
+				{"Option": "Dielektrizitätskonstante eps",	"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		},
+		{
+			"Frage": "Die Leistung P ist die Arbeit, die	P = W / __",
+			"Antworten": [
+				{"Option": "beim Zurücklegen einer bestimmten Strecke s umgesetzt wird	"korrekt": true},
+				{"Option": "für eine bestimmte Energie E umgesetzt wird",				"korrekt": false},
+				{"Option": "in einer bestimmten Zeit t umgesetzt wird", 				"korrekt": false}
+			]
+			"korrekt": "<p><span>Richtig</span></p>",
+			"falsch": "<p><span>Leider falsch</span></p>"
+		}
+	]
+}
