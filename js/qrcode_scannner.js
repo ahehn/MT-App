@@ -27,7 +27,7 @@ $(document).ready(function(){
 									if(code == stCode){
 										f_validcode = true;
 										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
-										$('div.positiontext').html('<p>Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau +'</p>');
+										$('#positiontext').html('<p>Du bist hier: <b>' + data.name + '</b></br>Etage: ' + data.etage + '</br>Gebäude: '+ data.bau +'</p>');
 										/*var text = document.getElementById('possitiontext');
 										text.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;*/
 										$("#position").popup("open", {positionTo: "window"});
