@@ -26,28 +26,29 @@ $(document).ready(function(){
 								$.each(json, function(code,data) {
 									if(code == stCode){
 										f_validcode = true;
-										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
-										$.mobile.changePage('#myPlace', {transition: 'slidedown', role: 'dialog'});
+										//alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
+										var element = document.getElementById('possitiontext');
+										element.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;
+										$("#possition").popup("open", {positionTo: "window"});
+										//$.mobile.changePage('#myPlace', {transition: 'slidedown', role: 'dialog'});
 									};
 								});
 								
 								//Checking if f_validcode Flag is false
 								if(f_validcode==false){
-									alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!2');
+									$("#invalidqr").popup("open", {positionTo: "window"});
 									//$.mobile.changePage('#invalid', {transition: 'slidedown', role: 'popup'});
 									$( "#invalid" ).popup( "open" );
 								}
 							});	
 						}
 						else{
-							alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!1');
 							$("#invalidqr").popup("open", {positionTo: "window"});
 						}
 
 						
 					}
 					else{
-						alert('Sorry, aber das ist kein QR-Code!');
 						$("#noqr").popup("open", {positionTo: "window"});
 					}		
 				};		
