@@ -48,7 +48,7 @@
 			// onSuccess Geolocation
 			//
 			function onSuccess(position) {
-				var element = document.getElementById('geolocation');
+				/*var element = document.getElementById('geolocation');
 				element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
 									'Longitude: '          + position.coords.longitude             + '<br />' +
 									'Altitude: '           + position.coords.altitude              + '<br />' +
@@ -56,7 +56,9 @@
 									'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
 									'Heading: '            + position.coords.heading               + '<br />' +
 									'Speed: '              + position.coords.speed                 + '<br />' +
-									'Timestamp: '          + position.timestamp                    + '<br />';
+									'Timestamp: '          + position.timestamp                    + '<br />';*/
+									
+				$('div.geolocation').html('<p>All new content. <em>You bet!</em></p>');
 									
 									
 				meineLongitude = position.coords.longitude;
@@ -266,12 +268,12 @@
 				</div>
 			</div>
 
-			<div data-role="popup" id="possition" data-overlay-theme="a" data-theme="b">
+			<div data-role="popup" id="position" data-overlay-theme="a" data-theme="b">
 				<div data-role="header" data-theme="a">
-					<h1>Deine Possition!</h1>
+					<h1>Deine Position!</h1>
 				</div>
 				<div data-role="content" data-theme="a">
-					<div id="possitiontext">Finding geolocation...</div>
+					<div id="positiontext">Finding geolocation...</div>
 					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">OK</a>
 				
 				</div>

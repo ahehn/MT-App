@@ -26,10 +26,11 @@ $(document).ready(function(){
 								$.each(json, function(code,data) {
 									if(code == stCode){
 										f_validcode = true;
-										//alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
-										var element = document.getElementById('possitiontext');
-										element.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;
-										$("#possition").popup("open", {positionTo: "window"});
+										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
+										$('div.positiontext').html('<p>Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau +'</p>');
+										/*var text = document.getElementById('possitiontext');
+										text.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;*/
+										$("#position").popup("open", {positionTo: "window"});
 										//$.mobile.changePage('#myPlace', {transition: 'slidedown', role: 'dialog'});
 									};
 								});
