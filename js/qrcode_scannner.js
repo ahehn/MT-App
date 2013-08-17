@@ -41,12 +41,14 @@ $(document).ready(function(){
 						}
 						else{
 							alert('Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!1');
+							$("#invalidqr").popup("open", {positionTo: "window"});
 						}
 
 						
 					}
 					else{
 						alert('Sorry, aber das ist kein QR-Code!');
+						$("#noqr").popup("open", {positionTo: "window"});
 					}		
 				};		
 			  }, 
