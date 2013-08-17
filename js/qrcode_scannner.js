@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 
 		// Start des Barcode-Scanner Plugins durch Klick auf SCAN-Button
-		$( "#scan" ).click(function() {
+		$( ".scan" ).click(function() {
 			var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 			scanner.scan(
 			  function (result) {
