@@ -37,14 +37,14 @@ $(document).ready(function(){
 								
 								//Checking if f_validcode Flag is false
 								if(f_validcode==false){
-									$("#invalidqr").popup("open", {positionTo: "window"});
+									$("#invalidqr2").popup("open", {positionTo: "window"});
 									//$.mobile.changePage('#invalid', {transition: 'slidedown', role: 'popup'});
-									$( "#invalid" ).popup( "open" );
 								}
 							});	
 						}
 						else{
-							$("#invalidqr").popup("open", {positionTo: "window"});
+							alert("Scanning failed: ");
+							$("#invalidqr1").popup("open", {positionTo: "window"});
 						}
 
 						
