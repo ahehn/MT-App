@@ -41,8 +41,8 @@
 			//
 			function onDeviceReady() {
 				$("#welcome").popup("open", {positionTo: "window"});
-				$( "#geook" ).click(function() {navigator.geolocation.getCurrentPosition(onSuccess, onError);};
-				$( "#geofalse" ).click(function() {onError;};
+				$( "#geook" ).click(function() {navigator.geolocation.getCurrentPosition(onSuccess, onError);});
+				$( "#geofalse" ).click(function() {onError;});
 			}
 
 			
@@ -182,7 +182,7 @@
 					<h1>Achtung!</h1>
 				</div>
 				<div data-role="content" data-theme="b">
-					<h3 class="ui-title">Verwendung von Standordinformationen</h3>
+					<h3 class="ui-title">Verwendung von Standordinformationen!</h3>
 					<p>Um deinen Standort zu bestimmen möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
 					<a href="#" id="geook" data-role="button" data-rel="back" data-theme="a">OK</a>
 					<a href="#" id="geofalse" data-role="button" data-rel="back" data-theme="a">NEIN, Danke!</a>
