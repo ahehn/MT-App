@@ -59,7 +59,14 @@
 									'Speed: '              + position.coords.speed                 + '<br />' +
 									'Timestamp: '          + position.timestamp                    + '<br />';*/
 									
-				$('#geolocation').html('<p>All new content. <em>You bet!</em></p>');
+				$('#geolocation').html('Latitude: '           + position.coords.latitude              + '<br />' +
+									'Longitude: '          + position.coords.longitude             + '<br />' +
+									'Altitude: '           + position.coords.altitude              + '<br />' +
+									'Accuracy: '           + position.coords.accuracy              + '<br />' +
+									'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+									'Heading: '            + position.coords.heading               + '<br />' +
+									'Speed: '              + position.coords.speed                 + '<br />' +
+									'Timestamp: '          + position.timestamp                    + '<br />');
 									
 									
 				meineLongitude = position.coords.longitude;
@@ -86,7 +93,7 @@
 			// onError Callback creates the Google Map only with the HsKA building markers
 			//
 			function onError(error) {
-				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
+				//window.alert('Deine Position konnte nicht ermittelt werden! :-(');
 				$("#nopos").popup("open", {positionTo: "window"});
 				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
 				var mapOptions = {												// Definition der Anzeige-Optionen der Google-Maps karte
