@@ -42,7 +42,7 @@
 			function onDeviceReady() {
 				$("#welcome").popup("open", {positionTo: "window"});
 				$( "#geook" ).click(function() {navigator.geolocation.getCurrentPosition(onSuccess, onError);});
-				$( "#geofalse" ).click(function() {onError;});
+				$( "#geofalse" ).click(function() {onError();});
 			}
 
 			
@@ -87,6 +87,7 @@
 			//
 			function onError(error) {
 				window.alert('Deine Position konnte nicht ermittelt werden! :-(');
+				$("#nopos").popup("open", {positionTo: "window"});
 				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
 				var mapOptions = {												// Definition der Anzeige-Optionen der Google-Maps karte
 					zoom: 15,													// Zoom-Stufe der Karte
@@ -188,7 +189,18 @@
 					<a href="#" id="geofalse" data-role="button" data-rel="back" data-theme="a">NEIN, Danke!</a>
 				</div>
 			</div>
+			
+			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<div data-role="content" data-theme="b">
+					<p>Dein Standort konnte nicht ermittelt werden! :-(</p>
+					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+				</div>
+			</div>
 
+			
 			
 			<!-- ######################### FOOTER ######################### -->
 			<div data-role="footer" data-position="fixed">
