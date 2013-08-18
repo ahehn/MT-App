@@ -40,8 +40,9 @@
 			// device APIs are available
 			//
 			function onDeviceReady() {
-				navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				$("#welcome").popup("open", {positionTo: "window"});
+				$( "#geook" ).click(function() {navigator.geolocation.getCurrentPosition(onSuccess, onError);};
+				$( "#geofalse" ).click(function() {onError;};
 			}
 
 			
@@ -178,12 +179,13 @@
 			
 			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
 				<div data-role="header" data-theme="a">
-					<h1>Willkommen</h1>
+					<h1>Achtung!</h1>
 				</div>
 				<div data-role="content" data-theme="b">
-					<h3 class="ui-title">Hallo</h3>
-					<p>Schön dich zu sehen!</p>
-					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+					<h3 class="ui-title">Verwendung von Standordinformationen</h3>
+					<p>Um deinen Standort zu bestimmen möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
+					<a href="#" id="geook" data-role="button" data-rel="back" data-theme="a">OK</a>
+					<a href="#" id="geofalse" data-role="button" data-rel="back" data-theme="a">NEIN, Danke!</a>
 				</div>
 			</div>
 
