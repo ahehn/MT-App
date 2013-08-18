@@ -41,7 +41,7 @@
 			//
 			function onDeviceReady() {
 				$("#welcome").popup("open", {positionTo: "window"});
-				$( "#geook" ).click(function() {navigator.geolocation.getCurrentPosition(onSuccess, onError);});
+				$( "#geook" ).click(function() {navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:600000, timeout:5000, enableHighAccuracy: true});});
 				$( "#geofalse" ).click(function() {onError();});
 			}
 
