@@ -8,12 +8,17 @@ div#Main img{
 }
 
 /* Hintergrundgrafik für alle Seiten */
-.ui-content {
+.ui-body-a {
 	background: url(themes/images/bg.png);
     background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: auto 100%;
 	background-position: left bottom;
+}​
+
+.ui-body-a p {
+	text-align: justify;
+	padding-left: 100px;
 }​
 
 /* ??? */
