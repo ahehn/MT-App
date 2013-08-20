@@ -55,7 +55,8 @@ $(document).ready(function(){
 				};		
 			  }, 
 			  function (error) {
-				  alert("Scanning failed: " + error);
+				$("#error").popup("open", {positionTo: "window"});
+				//alert("Scanning failed: " + error);
 			  }
 			);
 		});

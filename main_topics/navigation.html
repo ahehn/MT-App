@@ -42,7 +42,7 @@
 			function onDeviceReady() {
 				$("#welcome").popup("open", {positionTo: "window"});
 				$( ".geook" ).click(function() {
-					$('#map-canvas').html('<a href="#" class="geook" data-role="button" data-icon="refresh" data-theme="a" data-inline="true">Refresh</a>');
+					//$('#map-canvas').html('<a href="#" class="geook" data-role="button" data-icon="refresh" data-theme="a" data-inline="true">Refresh</a>');
 					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:600000, timeout:5000, enableHighAccuracy: true});
 					$("#welcome").popup("close");
 				});
@@ -303,12 +303,24 @@
 				<div data-role="header" data-theme="a" style="width: 100%;">
 					<h1>Deine Position!</h1>
 				</div>
-				<div data-role="content" data-theme="a">
+				<div data-role="content" data-theme="a"  style="width: 100%;">
 					<div id="positiontext"><!-- Hier wird die aktuelle Position eingetragen--></div>
 					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
 				
 				</div>
-			</div>				
+			</div>
+
+			<div data-role="popup" id="error" data-overlay-theme="a" data-theme="b"  style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a" style="width: 100%;">
+					<h1>Fehler!</h1>
+				</div>
+				<div data-role="content" data-theme="a">
+					<p>Es konnte kein Barcode gescannt werden!</p>
+					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">OK</a>
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>	
+				
+				</div>
+			</div>						
 			
 			<!-- ######################### FOOTER ######################### -->
 			<div data-role="footer" data-position="fixed">
