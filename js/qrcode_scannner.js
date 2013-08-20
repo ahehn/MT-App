@@ -43,7 +43,6 @@ $(document).ready(function(){
 							});	
 						}
 						else{
-							alert("Scanning failed: ");
 							$("#invalidqr1").popup("open", {positionTo: "window"});
 						}
 
