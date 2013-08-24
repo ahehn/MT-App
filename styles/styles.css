@@ -16,9 +16,15 @@ div#Main img{
 	background-position: left bottom;
 }​
 
-.ui-body-a p {
+/* Blocksatz für Absätze */
+p {
 	text-align: justify;
-	padding-left: 100px;
+}​
+
+/* Verschachtelte Absätze einrücken */
+p p {
+	text-align: justify;
+	padding-left: 200px;
 }​
 
 /* ??? */

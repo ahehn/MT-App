@@ -1,4 +1,20 @@
 @charset "UTF-8";
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-map {
+	background: url("../bilder/navigation/icon_map.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background-size: 18px 18px;
+	}
+
+	.ui-icon-qr {
+	background: url("../bilder/navigation/icon_qr.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background-size: 18px 18px;
+	}
+
+	.ui-icon-building {
+	background: url("../bilder/navigation/icon_building.png") no-repeat rgba(0, 0, 0, 0.4) !important;
+	background-size: 18px 18px;
+	}
+}
 
 /* ??? */
 div#map-canvas {
@@ -10,3 +26,5 @@ div#map-canvas {
 	background-repeat: no-repeat ;
 	background-position: center ;
 }
+
+
