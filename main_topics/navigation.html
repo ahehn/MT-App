@@ -35,7 +35,7 @@
 			// Wait for device API libraries to load
 			//
 			document.addEventListener("deviceready", onDeviceReady, false);
-
+			
 			
 			// device APIs are available
 			//
@@ -258,7 +258,43 @@
 				
 				<p><button class="scan" data-icon="search" data-iconpos="top">SCAN</button> </p>
 				
-				<div id="geolocation">Finding geolocation...</div>
+				<div id="geolocation">Finding geolocation...
+					<center><h3>Haupteingang</h3></center>
+					<p>
+						<table>
+							<tr>
+								<td>
+									<b>Etage:</b>
+								</td>
+								<td>
+									EG
+								</td>									
+							</tr>
+							
+							<tr>
+								<td>
+									<b>Gebäude:</b>
+								</td>
+								<td>
+									F
+								</td>									
+							</tr>
+						</table>
+						
+						<table>
+							<tr>
+								<td>
+									<i>Der blaue Pin kennzeichnet deine aktuelle Position</i>
+								</td>						
+							</tr>
+							
+							<tr>
+								<td>
+									<center><img src="../bilder/navigation/HsKA_F_0001.png" style="max-width:70%;" alt="Gebäude F"></center>				
+							</tr>
+						</table>
+					</p>
+				</div>
 			</div>
 			
 			
@@ -298,11 +334,33 @@
 			</div>
 
 			<div data-role="popup" id="position" data-overlay-theme="a" data-theme="b"  style="right: 1%; left: 1%; width: 98%;">
-				<div data-role="header" data-theme="a" style="width: 100%;">
-					<h1>Deine Position!</h1>
+				<div data-role="header" data-theme="a">
+					<h1>Deine Position</h1>
 				</div>
-				<div data-role="content" data-theme="a"  style="width: 100%;">
-					<div id="positiontext"><!-- Hier wird die aktuelle Position eingetragen--></div>
+				<div data-role="content" data-theme="a">
+					<div id="positiontext"><!-- Hier wird die aktuelle Position eingetragen-->
+					
+					
+					<center><h3>Haupteingang</h3></center>
+					<p>
+						Etage: EG</br>
+						Gebäude: F
+					</p>
+					<p>
+						Der blaue Pin kennzeichnet deine aktuelle Position:</br>
+						<img src="../bilder/navigation/HsKA_F_0001.png" style="max-width:80%;" alt="Gebäude F">
+					</p>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
 					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
 				
 				</div>

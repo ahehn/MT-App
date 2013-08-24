@@ -28,7 +28,41 @@ $(document).ready(function(){
 										f_validcode = true;
 										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
 										$('#positiontext').html(
-										'<h4>' + data.name + '</h4> <p>Etage: ' + data.etage + '</br>Gebäude: ' + data.bau + '</p> <p>Der blaue Pin kennzeichnet deine aktuelle Position:</br><img src="../bilder/navigation/' + code + '.png" style="max-width:80%;" alt="Gebäude ' + data.bau + 'F, ' + data.etage + '"></p>');
+										'<center><h3>' + data.name + '</h3></center>
+										<p>
+											<table>
+												<tr>
+													<td>
+														<b>Etage:</b>
+													</td>
+													<td>
+														' + data.etage + '
+													</td>									
+												</tr>
+												
+												<tr>
+													<td>
+														<b>Gebäude:</b>
+													</td>
+													<td>
+														' + data.bau + '
+													</td>									
+												</tr>
+											</table>
+											
+											<table>
+												<tr>
+													<td>
+														<i>Der blaue Pin kennzeichnet deine aktuelle Position</i>
+													</td>						
+												</tr>
+												
+												<tr>
+													<td>
+														<center><img src="../bilder/navigation/' + code + '.png" style="max-width:70%;" alt="Gebäude ' + data.bau + ', ' + data.etage + '"></center>				
+												</tr>
+											</table>
+										</p>');
 										/*var text = document.getElementById('possitiontext');
 										text.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;*/
 										$("#position").popup("open", {positionTo: "window"});
