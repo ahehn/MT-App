@@ -27,7 +27,8 @@ $(document).ready(function(){
 									if(code == stCode){
 										f_validcode = true;
 										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
-										$('#positiontext').html('<p>Du bist hier: <b>' + data.name + '</b></br>Etage: ' + data.etage + '</br>Gebäude: '+ data.bau +'</p>');
+										$('#positiontext').html(
+										'<h3>' + data.name + '</h3> <p>Etage: ' + data.etage + '</p> <p>Gebäude: ' + data.bau + '</p> <p><img src="../bilder/navigation/' + code + '.png" alt="Gebäude ' + data.bau + 'F, ' + data.etage + '"></p>');
 										/*var text = document.getElementById('possitiontext');
 										text.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;*/
 										$("#position").popup("open", {positionTo: "window"});
