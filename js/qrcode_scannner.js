@@ -28,7 +28,7 @@ $(document).ready(function(){
 										f_validcode = true;
 										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
 										$('#positiontext').html(
-										'<h3>' + data.name + '</h3> <p>Etage: ' + data.etage + '</p> <p>Gebäude: ' + data.bau + '</p> <p><img src="../bilder/navigation/' + code + '.png" style="max-width:80%;" alt="Gebäude ' + data.bau + 'F, ' + data.etage + '"></p>');
+										'<h4>' + data.name + '</h4> <p>Etage: ' + data.etage + '</br>Gebäude: ' + data.bau + '</p> <p>Der blaue Pin kennzeichnet deine aktuelle Position:</br><img src="../bilder/navigation/' + code + '.png" style="max-width:80%;" alt="Gebäude ' + data.bau + 'F, ' + data.etage + '"></p>');
 										/*var text = document.getElementById('possitiontext');
 										text.innerHTML = 'Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau;*/
 										$("#position").popup("open", {positionTo: "window"});
