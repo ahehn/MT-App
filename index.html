@@ -24,22 +24,13 @@
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script type="text/javascript" src="barcodescanner.js"></script>
 		
-		    <script type="text/javascript" charset="utf-8">
-				// Wait for device API libraries to load
-				//
-				document.addEventListener("deviceready", onDeviceReady, false);
-
-				// device APIs are available
-				//
-				function onDeviceReady() {
-					var element = document.getElementById('deviceProperties');
-					element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-										'Device Cordova: '  + device.cordova  + '<br />' +
-										'Device Platform: ' + device.platform + '<br />' +
-										'Device UUID: '     + device.uuid     + '<br />' +
-										'Device Version: '  + device.version  + '<br />';
+		<script type="text/javascript">
+			$(document).on('pageinit', function(){
+				if (device.platform == "iOS") {
+					$("a[onClick=\"navigator.app.exitApp();\"]").hide();
 				}
-			</script>
+			});
+		</script>
 	</head>
 
 	<!-- BODY -->
@@ -51,7 +42,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -77,7 +68,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -88,7 +79,6 @@
 			</div>
 
 			<div data-role="content">
-				<p id="deviceProperties">Loading device properties...</p>
 				<p style="text-align: justify;">
 					Hochschule Karlsruhe<br>
 					Technik und Wirtschaft<br>
@@ -131,7 +121,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -157,7 +147,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -184,7 +174,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -209,7 +199,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -233,7 +223,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -303,7 +293,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -337,7 +327,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -365,7 +355,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -399,7 +389,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -446,7 +436,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -525,7 +515,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -679,7 +669,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -713,7 +703,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -753,7 +743,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -778,7 +768,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -830,7 +820,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -861,7 +851,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -927,7 +917,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -951,7 +941,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
@@ -1025,7 +1015,7 @@
 				<h3>Menü</h3>
 				<a data-role="button" data-theme="b" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
 				<a data-role="button" data-theme="b" data-icon="search" data-transition="flip" href="main_topics/navigation.html" rel="external">Navigator</a>
-				<!-- <a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a> -->
+				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
 
