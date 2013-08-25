@@ -16,17 +16,6 @@ div#Main img{
 	background-position: left bottom;
 }​
 
-/* Blocksatz für Absätze */
-p {
-	text-align: justify;
-}​
-
-/* Verschachtelte Absätze einrücken */
-p p {
-	text-align: justify;
-	padding-left: 200px;
-}​
-
 /* ??? */
 div#map-canvas {
 	top: 0px;
