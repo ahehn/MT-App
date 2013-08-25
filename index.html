@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/themes/20130807_MT_Theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="styles/photoswipe.css" />
 		<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/navigation.css" />
 		
 		<!-- Einbindung von jQuery und jQuery mobile -->
 		<script type="text/javascript" src="js/klass.min.js"></script>
@@ -23,6 +24,12 @@
 		
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script type="text/javascript" src="barcodescanner.js"></script>
+		
+		<!-- GoogleMaps API -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script type="text/javascript" src="../js/qrcode_scannner.js"></script>
+		<script type="text/javascript" src="../js/campus_map.js"></script>
+		
 		
 		<script type="text/javascript" charset="utf-8">
 			document.addEventListener("deviceready", onDeviceReady, false);
@@ -165,7 +172,7 @@
 					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Forschung">Forschung</a>
 					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Stipendien">Stipendien</a>
 					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Kontakt">Kontakt</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="main_topics/navigation.html" rel="external">Navigator</a>
+					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Navigator1">Navigator</a>
 				</div>
 			</div>
 		</div>
@@ -815,8 +822,14 @@
 				</div>
 			</div>
 		</div>
+
+					<!--##################################################################################
+						##																				##
+						##									Navigator 									##
+						##																				##
+						################################################################################## -->
 		
-		<div data-role="page" data-theme="a" id="Navigator" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
+		<div data-role="page" data-theme="a" id="Navigator1" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
 			<!-- Side panel -->	
 			<div data-role="panel" data-theme="b" id="SidePanelNavigator" data-position="right" data-position-fixed="true" data-display="overlay">
 				<h3>Menü</h3>
@@ -825,28 +838,232 @@
 				<a data-role="button" data-theme="b" data-icon="delete" onClick="navigator.app.exitApp();">App Beenden</a>
 				<a data-role="button" data-theme="b" data-icon="delete"   data-rel="close">Menü Schließen</a>
 			</div>
-
+			
+			<!-- ######################### HEADER ######################### -->	
 			<div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" data-rel="back" href="#Hochschule">Zurück</a>
 				<h1>Navigator</h1>
 				<a data-role="button" data-icon="grid" data-transition="slide" href="#SidePanelNavigator">Menü</a>
 			</div>
-
+			
+			<!-- ######################### CONTENT ######################### -->	
 			<div data-role="content">
-				<div data-role="collapsible-set" data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
-					<!--##################################################################################
-						##																				##
-						##									Navigator 									##
-						##																				##
-						################################################################################## -->
+				<div id="map-canvas" style="position:absolute; width: 100%;height: 100%;"><!-- hier wird die Karte angezeigt --></div>				
+
+			</div>
+			
+			<!-- ######################### POPUPS ######################### -->			
+			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<div data-role="content" data-theme="b">
+					<h3 class="ui-title">Verwendung von Standordinformationen!</h3>
+					<p>Um deinen Standort zu bestimmen möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
+					<a href="#" class="geook" data-role="button" data-theme="a">OK</a>
+					<a href="#" id="geofalse" data-role="button" data-theme="a">NEIN, Danke!</a>
 				</div>
 			</div>
 			
-			<div data-role="footer">
-				
+			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+				<div data-role="header" data-theme="a">
+					<h1>Achtung!</h1>
+				</div>
+				<div data-role="content" data-theme="b">
+					<p>Dein Standort konnte nicht ermittelt werden! :-(</p>
+					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+				</div>
 			</div>
+			
+			<!-- ######################### FOOTER ######################### -->
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Navigator1" data-icon="grid" data-iconpos="top" data-transition="none" class="ui-btn-active ui-state-persist">Karte</a></li>
+						<li><a href="#Navigator2" data-icon="search" data-iconpos="top" data-transition="slide">QR-Code</a></li>
+						<li><a href="#Navigator3" data-icon="home" data-iconpos="top" data-transition="slide">Gebäudeplan</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
 		</div>
 		
+		<div data-role="page"   id="Navigator2" data-theme="a">
+		
+			<div data-role="panel" data-theme="a" id="SidePanelp2" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="a" data-icon="home" data-transition="flip" href="../index.html" rel="external">Hauptmenü</a>
+				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+		
+			<!-- ######################### HEADER ######################### -->
+			<div data-role="header" data-position="fixed">
+				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#Main">Zurück</a>
+				<h1>Navigator</h1>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="#SidePanelp2">Menü</a>
+			</div>
+			
+			<!-- ######################### Content ######################### -->
+			<div data-role="content">
+				<p>Du weißt nicht wo du gerade bist? Dann scanne einen QR-Code in deiner Nähe. Er wird die weiterhelfen...</p>
+				
+				<p><button class="scan" data-icon="search" data-iconpos="top">SCAN</button> </p>
+				
+				<div id="geolocation">Finding geolocation...</div>
+			</div>
+			
+			
+			<!-- ######################### POPUPS ######################### -->			
+
+			<div data-role="popup" id="noqr" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a" style="width: 100%;">
+					<h1>Achtung!</h1>
+				</div>
+				<div data-role="content" data-theme="a">
+					<p>Sorry, aber das ist kein QR-Code!</p>
+					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>					
+				</div>
+			</div>	
+
+			<div data-role="popup" id="invalidqr1" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a" style="width: 100%;">
+					<h1>Achtung!</h1>
+				</div>
+				<div data-role="content" data-theme="a">
+					<p>Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!1</p>
+					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>					
+				</div>
+			</div>
+			
+			<div data-role="popup" id="invalidqr2" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a" style="width: 100%;">
+					<h1>Achtung!</h1>
+				</div>
+				<div data-role="content" data-theme="a">
+					<p>Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!2</p>
+					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">OK</a>
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>					
+				</div>
+			</div>
+
+			<div data-role="popup" id="position" data-overlay-theme="a" data-theme="b"  style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a">
+					<h1>Deine Position</h1>
+				</div>
+				<div data-role="content" data-theme="a">
+					<div id="positiontext"><!-- Hier wird die aktuelle Position eingetragen--></div>
+				</div>
+			</div>
+
+			<div data-role="popup" id="error" data-overlay-theme="a" data-theme="b"  style="right: 1%; left: 1%; width: 98%;">
+				<div data-role="header" data-theme="a" style="width: 100%;">
+					<h1>Fehler!</h1>
+				</div>
+				<div data-role="content" data-theme="a">
+					<p>Es konnte kein Barcode gescannt werden!</p>
+					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">OK</a>
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>	
+				
+				</div>
+			</div>						
+			
+			<!-- ######################### FOOTER ######################### -->
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Navigator1" data-icon="grid" data-iconpos="top" data-transition="slide" data-direction="reverse">Karte</a></li>
+						<li><a href="#Navigator2" data-icon="search" data-iconpos="top" data-transition="none" class="ui-btn-active ui-state-persist">QR-Code</a></li>
+						<li><a href="#Navigator3" data-icon="home" data-iconpos="top" data-transition="slide">Gebäudeplan</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div>
+		
+		
+		<div data-role="page" id="Navigator3"  data-theme="a">
+		
+			<div data-role="panel" data-theme="a" id="SidePanelp3" data-position="right" data-position-fixed="true" data-display="overlay">
+				<h3>Menü</h3>
+				<a data-role="button" data-theme="a" data-icon="info"   data-transition="flip" href="#Impressum">Impressum</a>
+				<a data-role="button" data-theme="a" data-icon="home" data-transition="flip" href="../index.html" rel="external">Hauptmenü</a>
+				<a data-role="button" data-theme="a" data-icon="search" data-transition="flip" href="navigation.html" rel="external">Navigator</a>
+				<a data-role="button" data-theme="a" data-icon="delete" onClick="navigator.app.exitApp();">MT-App Beenden</a>
+				<a data-role="button" data-theme="a" data-icon="back"   data-rel="close">Menü Schließen</a>
+			</div>
+		
+			<!-- ######################### HEADER ######################### -->
+			<div data-role="header" data-position="fixed">
+				<a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="../index.html#Main">Zurück</a>
+				<h1>Navigator</h1>
+				<a data-role="button" data-icon="grid" data-iconpos="notext" data-transition="slide" data-direction="reverse" rel="external" href="#SidePanelp3">Menü</a>
+			</div>
+			
+			<!-- ######################### Content ######################### -->
+			<div data-role="content">
+
+				
+				<ul data-role="listview" data-inset="true" data-divider-theme="a">
+					<li data-role="list-divider">Gebäude F</li>
+					<li data-icon="false"><a href="#popup_og3" data-rel="popup" data-position-to="window" data-transition="slideup">3. OG</a></li>
+					<li data-icon="false"><a href="#popup_og2" data-rel="popup" data-position-to="window" data-transition="slideup">2.OG</a></li>
+					<li data-icon="false"><a href="#popup_og1" data-rel="popup" data-position-to="window" data-transition="slideup">1.OG</a></li>
+					<li data-icon="false"><a href="#popup_eg" data-rel="popup" data-position-to="window" data-transition="slideup">EG</a></li>
+					<li data-icon="false"><a href="#popup_kg" data-rel="popup" data-position-to="window" data-transition="slideup">KG</a></li>
+				</ul>
+					
+										
+				<div data-role="popup" id="popup_og3" data-overlay-theme="a" data-theme="a" data-corners="false">
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<img class="popphoto" src="bilder/navigation/OG3.png" style="max-height:90%;" alt="Gebäude F, 3.OG">
+				</div>
+				
+				<div data-role="popup" id="popup_og2" data-overlay-theme="a" data-theme="a" data-corners="false">
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<img class="popphoto" src="bilder/navigation/OG2.png" style="max-height:90%;" alt="Gebäude F, 2.OG">
+				</div>
+				
+				<div data-role="popup" id="popup_og1" data-overlay-theme="a" data-theme="a" data-corners="false">
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<img class="popphoto" src="bilder/navigation/OG1.png" style="max-height:90%;" alt="Gebäude F, 1.OG">
+				</div>
+				
+				<div data-role="popup" id="popup_eg" data-overlay-theme="a" data-theme="a" data-corners="false">
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<img class="popphoto" src="bilder/navigation/EG.png" style="max-height:90%;" alt="Gebäude F, EG">
+				</div>
+				
+				<div data-role="popup" id="popup_kg" data-overlay-theme="a" data-theme="a" data-corners="false">
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<img class="popphoto" src="bilder/navigation/KG.png" style="max-height:90%;" alt="Gebäude F, KG">
+				</div>
+				
+			</div>
+			
+			
+			<!-- ######################### FOOTER ######################### -->
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Navigator1" data-icon="grid" data-iconpos="top" data-transition="slide" data-direction="reverse" >Karte</a></li>
+						<li><a href="#Navigator2" data-icon="search" data-iconpos="top" data-transition="slide" data-direction="reverse" >QR-Code</a></li>
+						<li><a href="#Navigator3" data-icon="home" data-iconpos="top" data-transition="none" class="ui-btn-active ui-state-persist">Gebäudeplan</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div>
+		
+	
+
+					<!--##################################################################################
+						##																				##
+						##							ENDE Navigator ENDE 								##
+						##																				##
+						################################################################################## -->
+
 		<div data-role="page" data-theme="a" id="Finanzierung" data-title="Hochschule Karlsruhe - Studiengang Mechatronik">
 			<!-- Side panel -->	
 			<div data-role="panel" data-theme="b" id="SidePanelFinanzierung" data-position="right" data-position-fixed="true" data-display="overlay">
