@@ -24,12 +24,14 @@
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script type="text/javascript" src="barcodescanner.js"></script>
 		
-		<script type="text/javascript">
-			$(document).on('pageinit', function(){
-				if (device.platform == "iOS") {
+		<script type="text/javascript" charset="utf-8">
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				var dev_platform = device.platform;
+				if (dev_platform == "iOS") {
 					$("a[onClick=\"navigator.app.exitApp();\"]").hide();
 				}
-			});
+			}
 		</script>
 	</head>
 
