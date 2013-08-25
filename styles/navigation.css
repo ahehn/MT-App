@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.ui-icon-map {
+/*.ui-icon-map {
 	background-image: url("../bilder/navigation/icon_map.png";
 }
 
@@ -29,7 +29,7 @@
 	background: url("../bilder/navigation/icon_building.png") no-repeat rgba(0, 0, 0, 0.4) !important;
 	background-size: 18px 18px;
 	}
-}
+}*/
 
 /* ??? */
 div#map-canvas {
