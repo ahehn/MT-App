@@ -163,9 +163,18 @@
 		-->
 
 		<!-- Einbindung von jQuery mobile -->
-		
 		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
-
+		
+		<!-- Sidepanels ausblenden, falls iOS verwendet wird -->
+		<script type="text/javascript" charset="utf-8">
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				var dev_platform = device.platform;
+				if (dev_platform == "iOS") {
+					$("a[onClick=\"navigator.app.exitApp();\"]").hide();
+				}
+			}
+		</script>
 	</head>
 
 	<!-- ######################### BODY ######################### -->
