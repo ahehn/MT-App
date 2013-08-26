@@ -30,7 +30,7 @@
 		<script type="text/javascript" src="js/qrcode_scannner.js"></script>
 		<script type="text/javascript" src="js/campus_map.js"></script>
 		
-		
+		<!-- Sidepanels ausblenden, falls iOS verwendet wird -->
 		<script type="text/javascript" charset="utf-8">
 			document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady() {
@@ -172,7 +172,7 @@
 					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Forschung">Forschung</a>
 					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Stipendien">Stipendien</a>
 					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Kontakt">Kontakt</a>
-					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="#Navigator1">Navigator</a>
+					<a data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right" href="main_topics/navigation.html" rel="external">Navigator</a>
 				</div>
 			</div>
 		</div>
@@ -541,7 +541,7 @@
 						<p style="text-align: justify;">
 							Studenten mit gutem bis sehr gutem Abschluss in einem Bachelorstudiengang bietet die Hochschule Karlsruhe die Möglichkeit, ihr Fachwissen mit einem Master weiter zu vertiefen. Wer promovieren will, tut dies nach dem zweijährigen Masterstudium, denn dieses ist, bis auf wenige Ausnahmen, die Voraussetzung für die Promotion.
 							<ul style="margin-left: 0.5em; padding-left: 0.5em;">
-								<li><b>Master an der Fakultät MMT</b><br>
+								<li><b>Master an der Fakultät MMT</b>
 									<p style="text-align: justify;">
 										An der Fakultät MMT werden momentan folgende Masterstudiengänge angeboten:
 									</p>
@@ -553,13 +553,15 @@
 										<li>Mechatronic and Micro-Mechatronic Systems</li>
 									</ul>
 									<p style="text-align: justify;">
-										Mehr Informationen zu den einzelnen Masterstudiengängen gibt's hier:<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/fakultaeten/fk-mmt/masterstudiengaenge.html','_blank','location=yes');return false;">Masterstudiengänge</a>.
+										Mehr Informationen zu den einzelnen Masterstudiengängen gibt's hier:<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/fakultaeten/fk-mmt/masterstudiengaenge.html','_blank','location=yes');return false;">Masterstudiengänge</a>
 									</p>
-								<li><b>Master an anderen Fakultäten/Hochschulen</b><br>
+								</li>
+								<li><b>Master an anderen Fakultäten/Hochschulen</b>
 									<p style="text-align: justify;">
 										Das Erlangen des Bachelors ermöglicht nicht nur das Masterstudium an der Fakultät MMT, sondern auch an den anderen Fakultäten der Hochschule, sowie anderen Hochschulen i.A.
-										Mehr Informationen zu Masterstudiengängen gibt's hier:<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://studieren.de/master.0.html','_blank','location=yes');return false;">Masterstudiengänge</a>.</li>
+										Mehr Informationen zu Masterstudiengängen gibt's hier:<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://studieren.de/master.0.html','_blank','location=yes');return false;">Masterstudiengänge</a>
 									</p>
+								</li>
 							</ul>
 						</p>
 					</div>
@@ -816,7 +818,7 @@
 					<div data-role="collapsible">
 						<h1>Campustag</h1>
 						<p style="text-align: justify;">
-							Die Hochschule Karlsruhe lädt zwei Mal jährlich Schülerinnen und Schüler sowie Studieninteressierte zum Campustag ein, um sich über die Studienangebote der Hochschule zu informieren und einen Blick hinter die Kulissen des Hochschullebens zu werfen. Studierende und Dozenten stellten Forschungsprojekte vor, führten durch die Labore und beantworteten Fragen rund ums Studium. Zahlreiche Infostände verschiedener Service-Einrichtungen der Hochschule und Beratungsangebote ergänzen das Programm. Den Termin für den nächsten Campustag gibt es hier: <a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/studieninteressierte/die-hochschule-kennenlernen/campustag.html','_blank','location=yes');return false;">Campustag</a>.
+							Die Hochschule Karlsruhe lädt zwei Mal jährlich Schülerinnen und Schüler sowie Studieninteressierte zum Campustag ein, um sich über die Studienangebote der Hochschule zu informieren und einen Blick hinter die Kulissen des Hochschullebens zu werfen. Studierende und Dozenten stellten Forschungsprojekte vor, führten durch die Labore und beantworteten Fragen rund ums Studium. Zahlreiche Infostände verschiedener Service-Einrichtungen der Hochschule und Beratungsangebote ergänzen das Programm. Den Termin für den nächsten Campustag gibt es hier: <a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/studieninteressierte/die-hochschule-kennenlernen/campustag.html','_blank','location=yes');return false;">Campustag</a>
 						</p>
 					</div>
 				</div>
@@ -1083,11 +1085,11 @@
 					<div data-role="collapsible">
 						<h1>BAföG</h1>
 						<p style="text-align: justify;">
-							Die staatliche Förderung mit BAföG („Bundesausbildungsförderungsgesetz“) ist quasi der Klassiker unter den Studienfinanzierungen.
-							Deutschlandweit werden bereits mehr als 125.000 Studierende gefördert. Eine grobe Abschätzung, ob du förderberechtigt bist, liefert der BAföG-Rechner: <a data-role="button" href="#" onClick="window.open('http://www.bafoeg-rechner.de/Rechner/','_blank','location=yes');return false;">BAföG-Rechner</a>
+							Die staatliche Förderung mit BAföG („Bundesausbildungs-Förderungsgesetz“) ist quasi der Klassiker unter den Studienfinanzierungen.
+							Deutschlandweit werden bereits mehr als 125.000 Studierende gefördert. Eine grobe Abschätzung, ob du förderberechtigt bist, liefert der BAföG-Rechner: <a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.bafoeg-rechner.de/Rechner/','_blank','location=yes');return false;">BAföG-Rechner</a>
 						</p>
 						<p style="text-align: justify;">
-							Weitere Informationen und Unterstützung bietet auch das Studentenwerk: <a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.studentenwerk-karlsruhe.de/de/finanzen/bafoeg','_blank','location=yes');return false;">Studentenwerk</a>.
+							Weitere Informationen und Unterstützung bietet auch das Studentenwerk: <a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.studentenwerk-karlsruhe.de/de/finanzen/bafoeg','_blank','location=yes');return false;">Studentenwerk</a>
 						</p>
 					</div>
 					<div data-role="collapsible">
@@ -1104,7 +1106,7 @@
 						<p style="text-align: justify;">
 							Nicht nur für Hochbegabte gibt es zahlreiche Stipendienprogramme, die sowohl finanzielle als auch ideelle Unterstützung beim Studium bieten.
 							Eine Übersicht über die verschiedenen Angebote gibt's hier:
-							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/studierende/careerservices/careernet/studienstipendien.html','_blank','location=yes');return false;">Stipendien zur Studienfinanzierung</a>
+							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/studierende/careerservices/careernet/studienstipendien.html','_blank','location=yes');return false;">Stipendienübersicht</a>
 						</p>
 					</div>
 					<div data-role="collapsible">
@@ -1113,7 +1115,7 @@
 							Die Hochschule Karlsruhe bietet die Möglichkeit, das Studium in Kooperation mit einem Unternehmen zu absolvieren.
 							Dabei werden alle praktischen Abschnitte des Studiums (z.B. Vorpraktikum, Praxissemester, Abschlussarbeit) in diesem Unternehmen abgeleistet –
 							im Gegenzug winkt eine finanzielle Unterstützung von 500 - 700 &euro; monatlich. Weitere Infos gibt es hier:
-							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/fakultaeten/fk-mmt/fk-mmtangebote/verbundstudium.html','_blank','location=yes');return false;">Karlsruher Verbundstudium</a>
+							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/fakultaeten/fk-mmt/fk-mmtangebote/verbundstudium.html','_blank','location=yes');return false;">Verbundstudium</a>
 						</p>
 					</div>
 					<div data-role="collapsible">
@@ -1211,7 +1213,7 @@
 						<p style="text-align: justify;">
 							Wer gerne singt oder schon immer einmal im Chor mitwirken wollte, ist bei vocal resources – dem Hochschulchor – gut aufgehoben.
 							Der hat überregional auf verschiedenen Festivals und Wettbewerben bereits auf sich aufmerksam gemacht.
-							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.vocal-resources.de/main.html','_blank','location=yes');return false;">vocal resources</a>
+							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.vocal-resources.de/','_blank','location=yes');return false;">vocal resources</a>
 						</p>
 					</div>
 					<div data-role="collapsible">
@@ -1219,7 +1221,7 @@
 						<p style="text-align: justify;">
 							Der Freundeskreis ist ein Verein aus derzeitigen und ehemaligen Studierenden der Mechatronik und Fahrzeugtechnologie.
 							Er organisiert u.a. Exkursionen, Podiumsdiskussionen und Messen für Praxissemester und Abschlussarbeiten.
-							Mehr über den Freundeskreis und aktuell anstehende Termine gibt es auf seiner Homepage:<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.freundeskreis-mechatronik-fahrzeugtechnologie.de','_blank','location=yes');return false;">Freundeskreis</a>.
+							Mehr über den Freundeskreis und aktuell anstehende Termine gibt es auf seiner Homepage:<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.freundeskreis-mechatronik-fahrzeugtechnologie.de','_blank','location=yes');return false;">Freundeskreis</a>
 						</p>
 					</div>
 				</div>
