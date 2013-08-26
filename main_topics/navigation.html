@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="../styles/themes/20130807_MT_Theme.min.css" />
 		<!-- Eigene CSS für die Navigation -->
 		<link rel="stylesheet" href="../styles/navigation.css"  type="text/css" />
+		<link rel="stylesheet" href="../styles/styles.css"  type="text/css" />
 
 
 		<!-- Einbindung von jQuery -->
@@ -32,7 +33,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		<script type="text/javascript" src="../js/qrcode_scannner.js"></script>
 		<script type="text/javascript" src="../js/campus_map.js"></script>
-		<!--<script type="text/javascript">
+		<script type="text/javascript">
 			// Wait for device API libraries to load
 			//
 			document.addEventListener("deviceready", onDeviceReady, false);
@@ -87,8 +88,8 @@
 						center: Latlng_position,									// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
 						panControl: false,											// panControl-Button wird deaktiviert
-						zoomControl: false,											// ZoomControl-Button wird aktiviert
-						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+						zoomControl: true,											// ZoomControl-Button wird aktiviert
+						mapTypeControl: true,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
 						scaleControl: false,										// scaleControl wird aktiviert
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
@@ -110,8 +111,8 @@
 					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
 					panControl: false,											// panControl-Button wird deaktiviert
-					zoomControl: false,											// ZoomControl-Button wird aktiviert
-					mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+					zoomControl: true,											// ZoomControl-Button wird aktiviert
+					mapTypeControl: true,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
 					scaleControl: false,										// scaleControl wird aktiviert
 					streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
@@ -160,7 +161,6 @@
 				});
 			}				
 		</script>
-		-->
 
 		<!-- Einbindung von jQuery mobile -->
 		<script type="text/javascript" src="../js/jquery.mobile-1.3.2.min.js"></script>
@@ -231,9 +231,9 @@
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#p1" data-icon="grid" data-iconpos="top" data-transition="none" class="ui-btn-active ui-state-persist">Karte</a></li>
-						<li><a href="#p2" data-icon="search" data-iconpos="top" data-transition="slide">QR-Code</a></li>
-						<li><a href="#p3" data-icon="home" data-iconpos="top" data-transition="slide">Gebäudeplan</a></li>
+						<li><a href="#p1" data-transition="none" class="ui-btn-active ui-state-persist"><img src="../bilder/navigation/icon_map.png"><br>Karte</a></li>
+						<li><a href="#p2" data-transition="slide"><img src="../bilder/navigation/icon_qr.png"><br>QR-Code</a></li>
+						<li><a href="#p3" data-transition="slide"><img src="../bilder/navigation/icon_building.png"><br>Gebäudeplan</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div><!-- /footer -->
@@ -391,9 +391,9 @@
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#p1" data-icon="grid" data-iconpos="top" data-transition="slide" data-direction="reverse">Karte</a></li>
-						<li><a href="#p2" data-icon="search" data-iconpos="top" data-transition="none" class="ui-btn-active ui-state-persist">QR-Code</a></li>
-						<li><a href="#p3" data-icon="home" data-iconpos="top" data-transition="slide">Gebäudeplan</a></li>
+						<li><a href="#p1" data-transition="slide" data-direction="reverse"><img src="../bilder/navigation/icon_map.png"><br>Karte</a></li>
+						<li><a href="#p2" data-transition="none" class="ui-btn-active ui-state-persist"><img src="../bilder/navigation/icon_qr.png"><br>QR-Code</a></li>
+						<li><a href="#p3" data-transition="slide"><img src="../bilder/navigation/icon_building.png"><br>Gebäudeplan</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div><!-- /footer -->
@@ -463,9 +463,9 @@
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#p1" data-icon="grid" data-iconpos="top" data-transition="slide" data-direction="reverse" >Karte</a></li>
-						<li><a href="#p2" data-icon="search" data-iconpos="top" data-transition="slide" data-direction="reverse" >QR-Code</a></li>
-						<li><a href="#p3" data-icon="home" data-iconpos="top" data-transition="none" class="ui-btn-active ui-state-persist">Gebäudeplan</a></li>
+						<li><a href="#p1" data-transition="slide" data-direction="reverse" ><img src="../bilder/navigation/icon_map.png"><br>Karte</a></li>
+						<li><a href="#p2" data-transition="slide" data-direction="reverse" ><img src="../bilder/navigation/icon_qr.png"><br>QR-Code</a></li>
+						<li><a href="#p3" data-transition="none" class="ui-btn-active ui-state-persist"><img src="../bilder/navigation/icon_building.png"><br>Gebäudeplan</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div><!-- /footer -->
