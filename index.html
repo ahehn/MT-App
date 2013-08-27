@@ -249,6 +249,9 @@
 			</div>
 			
 			<div data-role="content">
+				<p style="text-align: justify;">
+					Für das Betrachten der Videos ist eine Internetverbindung notwendig! Sollten ein Video nicht starten, klicke auf den Button "Videoprobleme?" darunter.
+				</p>
 				<div data-role="collapsible-set" data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 					<div data-role="collapsible">
 						<h1>Was ist Mechatronik?</h1>
@@ -391,12 +394,15 @@
 					Das Studium der Mechatronik ist das ideale Feld für technisch interessierte Studierende, die sich zu Beginn noch nicht auf eine Richtung festlegen, sondern am Ende des Grundstudiums noch aus vielen Möglichkeiten das für sich Passende auswählen möchten.
 				</p>
 				<p style="text-align: justify;">
-					Was Mechatronik genau ist, wird hier nochmal erklärt:					
+					Was Mechatronik genau ist, wird hier nochmal erklärt:
 				</p>
 
 				<video controls preload="none" width="100%" poster="bilder/mediathek/thumbs/mechatronik.png">
 					<source src="http://www.mmt-hska.de/videos/mechatronik.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 				</video>
+				<p style="text-align: justify;">
+					Für das Betrachten des Videos ist eine Internetverbindung notwendig! Sollte das Video oben nicht starten, klicke hier:
+				</p>
 				<a data-role="button" data-icon="alert" href="#" onClick="window.open('http://www.mmt-hska.de/videos/mechatronik.mp4','_system','location=yes');return false;">Videoprobleme?</a>
 			</div>
 		</div>
@@ -510,18 +516,49 @@
 					<div data-role="collapsible">
 						<h1>Projekte</h1>
 						<p style="text-align: justify;">
-							Im Laufe des Studiums arbeiten Studenten der Mechatronik in Gruppen an unterschiedlichsten Projekten, von denen hier einige beispielhaft vorgestellt werden:
+							Im Laufe des Studiums arbeiten Studenten der Mechatronik in Gruppen an unterschiedlichsten Projekten, von denen hier einige beispielhaft vorgestellt werden. Weitere Projekte gibt es hier zu sehen:
+							<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/fakultaeten/fk-mmt/projekte-lehre-und-weitere-einrichtungen/studentische-projekte.html','_blank','location=yes');return false;">Projekte</a><br>
 							<ul style="text-align: justify; margin-left: 0.5em; padding-left: 0.5em;">
 								<li><b>Wie balanciert man eine Kugel auf einem Rad?</b><br>
 									<p style="text-align: justify;">
-										Die Position der Kugel wird mit einer außermittig angeordneten Solarzelle gemessen. Der Regler vergleicht den Sollwert, die oberste Lage, mit der momentanen Lage, dem Istwert, der von der Solarzelle geliefert wird, und steuert den Gleichstrommotor so an, dass die Kugel in der instabilen Position oben auf dem Rad balanciert wird. Das Modell dient als Demonstrationsmodell für die experimentelle Reglereinstellung im Labor für Regelungstechnik. Es zeigt sehr anschaulich die Leistungsfähigkeit eines relativ einfach aufgebauten Reglers für Aufgabenstellungen, die manuell nicht beherrschbar sind.</li>
+										Die Position einer Kugel wird mit einer Solarzelle gemessen. Der Regler vergleicht die höchstmögliche Lage der Kugel mit der momentanen Lage, die von der Solarzelle gemessen wird, und steuert den Motor, der das Rad antreibt, so an, dass die Kugel in der instabilen Position oben auf dem Rad balanciert wird.<br>
+										Das Modell zeigt sehr anschaulich die Leistungsfähigkeit eines einfach aufgebauten Reglers für Aufgabenstellungen, die manuell nicht beherrschbar sind.
 									</p>
-								<li><b>Endo-Snake</b><br></li>
-								<li><b>Schwebender Würfel</b><br></li>
-								<li><b>Reinraum</b><br></li>
-								<li><b>Mechatronischer Kreisel</b><br>
-									<img src="bilder/mediathek/thumbs/mech_kreisel.png" alt="Mechatronischer Kreisel"></li>
-								<li><b>Nao</b><br></li>
+									<p style="text-align: justify;">
+										Ein Video zur Kugelbalance gibt es auch in der Mediathek:
+									</p>
+									<a data-role="button" data-icon="forward" href="#Videos">Mediathek-Videos</a><br>
+								</li>
+								<li>
+									<b>Mechatronischer Kreisel</b><br>
+									<p style="text-align: justify;">
+										Der mechatronische Kreisel wurde von Studenten für ein Projekt im Reinraum der Hochschule hergestellt. Mit Hilfe des Erdmagnetfeldes kann er feststellen, wie schnell er sich dreht, und dann mit 8 LEDs unterschiedliche Texte anzeigen.
+									</p>
+
+									<a href="#popupkreisel" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="bilder/mediathek/KREISEL.jpg" alt="Gehälter nach akad. Grad" style="width:100%"></a>
+									<div data-role="popup" id="popupkreisel" data-overlay-theme="a" data-theme="a" data-corners="false">
+										<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
+										<img class="popphoto" src="bilder/mediathek/KREISEL.jpg" alt="Mechatronischer Kreisel" style="max-height:100%;">
+									</div>
+
+									<p style="text-align: justify;">
+										Ein Video zum Kreisel kannst du in der Mediathek ansehen:
+									</p>
+									<a data-role="button" data-icon="forward" href="#Videos">Mediathek-Videos</a><br>
+								</li>
+								<li>
+									<b>Endo-Snake</b><br>
+									<p style="text-align: justify;">
+										bla bla bla
+									</p>
+								</li>
+								<li>
+									<b>App-Entwicklung</b><br>
+									<p style="text-align: justify;">
+										Nicht nur Informatiker beschäftigen sich mit Software, sondern auch Mechatroniker: Diese App entstand durch ein Projekt von vier Studierenden. Auch die App „Notenspiegel“, auf der Studierende u.a. ihre Noten ansehen können, war ein studentisches Projekt:
+									</p>
+									<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/fakultaeten/fk-mmt/projekte-und-weitere-einrichtungen/studentische-projekte/notenspiegel-app.html','_blank','location=yes');return false;">Notenspiegel-App</a>
+								</li>
 							</ul>
 						</p>
 					</div>
@@ -684,30 +721,33 @@
 						<p style="text-align:justify;">
 							...ihrem Abschluss:
 						</p>
-						<a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="bilder/statistik/gehalt_abschluss.png" alt="Gehälter nach Abschluss" style="width:100%"></a>
+						<a href="#popup_gehalt_abschluss" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="bilder/statistik/gehalt_abschluss.png" alt="Gehälter nach Abschluss" style="width:100%"></a>
 						
 						<p style="text-align:justify;">
 							...der Branche, in der sie arbeiten:
 						</p>
-						<a href="#popupSydney" data-rel="popup" data-position-to="origin" data-transition="fade"><img class="popphoto" src="bilder/statistik/gehalt_branche.png" alt="Gehälter nach Branchen" style="width:100%"></a>
+						<a href="#popup_gehalt_branche" data-rel="popup" data-position-to="origin" data-transition="fade"><img class="popphoto" src="bilder/statistik/gehalt_branche.png" alt="Gehälter nach Branchen" style="width:100%"></a>
 						
 						<p style="text-align:justify;">
 							...dem akademischen Grad, den sie erreicht haben:
 						</p>
-						<a href="#popupNYC" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="bilder/statistik/gehalt_grad.png" alt="Gehälter nach akad. Grad" style="width:100%"></a>
+						<a href="#popup_gehalt_grad" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="bilder/statistik/gehalt_grad.png" alt="Gehälter nach akad. Grad" style="width:100%"></a>
 						
 						<p style="text-align:justify;">
 							(zum Vergrößern klicken)
 						</p>
 						
-						<div data-role="popup" id="popupParis" data-overlay-theme="a" data-theme="a" data-corners="false">
-							<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="bilder/statistik/gehalt_abschluss.png" style="max-height:100%;" alt="Gehälter nach Abschluss">
+						<div data-role="popup" id="popup_gehalt_abschluss" data-overlay-theme="a" data-theme="a" data-corners="false">
+							<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
+							<img class="popphoto" src="bilder/statistik/gehalt_abschluss.png" style="max-height:100%;" alt="Gehälter nach Abschluss">
 						</div>
-						<div data-role="popup" id="popupSydney" data-overlay-theme="a" data-theme="a" data-corners="false">
-							<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="bilder/statistik/gehalt_branche.png" style="max-height:100%;" alt="Gehälter nach Branchen">
+						<div data-role="popup" id="popup_gehalt_branche" data-overlay-theme="a" data-theme="a" data-corners="false">
+							<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
+							<img class="popphoto" src="bilder/statistik/gehalt_branche.png" style="max-height:100%;" alt="Gehälter nach Branchen">
 						</div>
-						<div data-role="popup" id="popupNYC" data-overlay-theme="a" data-theme="a" data-corners="false">
-							<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="bilder/statistik/gehalt_grad.png" style="max-height:100%;" alt="Gehälter nach akad. Grad">
+						<div data-role="popup" id="popup_gehalt_grad" data-overlay-theme="a" data-theme="a" data-corners="false">
+							<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
+							<img class="popphoto" src="bilder/statistik/gehalt_grad.png" style="max-height:100%;" alt="Gehälter nach akad. Grad">
 						</div>
 					</div>
 				</div>
@@ -733,17 +773,28 @@
 
 			<div data-role="content">
 				<div data-role="collapsible-set" data-iconpos="right" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
-					<div data-role="collapsible">
-						<h1>Ranking der WirtschaftsWoche</h1>
-						<p style="text-align: justify;">
-							Für das aktuelle Hochschulranking der „WirtschaftsWoche“ (Ausgabe 15 vom 8. April 2013) wurden in Zusammenarbeit mit der Beratungsgesellschaft Universum Communications auch in diesem Jahr wieder Personalchefs deutscher Unternehmen aller Branchen befragt, aus welchen Hochschulen sie ihren eigenen Führungs- und Fachkräftenachwuchs rekrutieren, welche Hochschulen also nach ihrer Erfahrung die Studierenden am besten auf den Beruf vorbereiten. Der Schwerpunkt des Rankings liegt damit ganz bewusst auf der Praxisrelevanz der Hochschulausbildung. In Elektrotechnik, Informatik, Wirtschaftsinformatik und im Wirtschaftsingenieurwesen ist nach Ansicht der Personalmanager die Hochschule Karlsruhe bundesweit die Fachhochschule, die ihre Absolventen am besten auf den Beruf und damit auf die Karriere vorbereitet – also viermal Rang 1 im aktuellen Hochschulranking. Im Maschinenbau erreicht die Hochschule Karlsruhe den 5. Platz. Mit viermal Platz 1 und einmal Platz 5 in fünf von sechs zentralen ingenieurwissenschaftlichen, Informatik- bzw. Wirtschaftsdisziplinen ist die Hochschule Karlsruhe die erfolgreichste Fachhochschule dieses Rankings – und kann damit die ausgezeichneten Ergebnisse der Vorjahre bestätigen.
-						</p>
-					</div>
+					<p style="text-align: justify;">
+						Auch 2013 konnte die Hochschule wieder in zwei wichtigen Hochschulrankings hervorragende Ergebnisse erzielen:
+					</p>
 					<div data-role="collapsible">
 						<h1>CHE-Ranking</h1>
 						<p style="text-align: justify;">
-							Mit mehr als 300 untersuchten Hochschulen, 2.500 Fachbereichen und Bewertungen von 250.000 Studierenden ist das CHE-Hochschulranking das umfassendste und detaillierteste Ranking im deutschsprachigen Raum. Neben Fakten zu Studium, Lehre, Ausstattung und Forschung berücksichtigt es auch Urteile Studierender über die Studienbedingungen an ihrer Hochschule.
+							Das CHE-Hochschulranking ist das umfassendste und detaillierteste Ranking im deutschsprachigen Raum. Neben Fakten zu Studium, Lehre, Ausstattung und Forschung berücksichtigt es auch Urteile Studierender über die Studienbedingungen an ihrer Hochschule.
 						</p>
+						<p style="text-align: justify;">
+							Nähere Infos zu den Rankingergebnissen 2013 gibt es auf der Website der Hochschule Karlsruhe:
+						</p>
+						<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/hochschule/aktuelles/presse/che-hochschulranking-2013.html','_blank','location=yes');return false;">CHE-Rankingergebnisse</a>
+					</div>
+					<div data-role="collapsible">
+						<h1>Ranking der WirtschaftsWoche</h1>
+						<p style="text-align: justify;">
+							Für das Hochschulranking 2013 der „WirtschaftsWoche“ werden jährlich Personalchefs deutscher Unternehmen aller Branchen befragt, aus welchen Hochschulen sie ihren eigenen Führungs- und Fachkräftenachwuchs rekrutieren, welche Hochschulen also nach ihrer Erfahrung die Studierenden am besten auf den Beruf vorbereiten. In Elektrotechnik, Informatik, Wirtschaftsinformatik und im Wirtschaftsingenieurwesen ist nach Ansicht der Personalmanager die Hochschule Karlsruhe bundesweit die Fachhochschule, die ihre Absolventen am besten auf den Beruf und damit auf die Karriere vorbereitet.
+						</p>
+						<p style="text-align: justify;">
+							Weitere Informationen zum Ranking sind hier zu finden:
+						</p>
+						<a data-role="button" data-icon="forward" href="#" onClick="window.open('http://www.hs-karlsruhe.de/hochschule/aktuelles/presse/hska-beste-fachhochschule-im-aktuellen-hochschulranking-der-wirtschaftswoche.html','_blank','location=yes');return false;">WiWo-Rankingergebnisse</a>
 					</div>
 				</div>
 			</div>
@@ -1064,27 +1115,27 @@
 					
 										
 				<div data-role="popup" id="popup_og3" data-overlay-theme="a" data-theme="a" data-corners="false">
-					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
 					<img class="popphoto" src="bilder/navigation/OG3.png" style="max-height:90%;" alt="Gebäude F, 3.OG">
 				</div>
 				
 				<div data-role="popup" id="popup_og2" data-overlay-theme="a" data-theme="a" data-corners="false">
-					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
 					<img class="popphoto" src="bilder/navigation/OG2.png" style="max-height:90%;" alt="Gebäude F, 2.OG">
 				</div>
 				
 				<div data-role="popup" id="popup_og1" data-overlay-theme="a" data-theme="a" data-corners="false">
-					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
 					<img class="popphoto" src="bilder/navigation/OG1.png" style="max-height:90%;" alt="Gebäude F, 1.OG">
 				</div>
 				
 				<div data-role="popup" id="popup_eg" data-overlay-theme="a" data-theme="a" data-corners="false">
-					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
 					<img class="popphoto" src="bilder/navigation/EG.png" style="max-height:90%;" alt="Gebäude F, EG">
 				</div>
 				
 				<div data-role="popup" id="popup_kg" data-overlay-theme="a" data-theme="a" data-corners="false">
-					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Schlie&szlig;en</a>
 					<img class="popphoto" src="bilder/navigation/KG.png" style="max-height:90%;" alt="Gebäude F, KG">
 				</div>
 				
