@@ -16,15 +16,7 @@
 		<script type="text/javascript" src="phonegap.js"></script>
 		
 		<!-- Sidepanels ausblenden, falls iOS verwendet wird -->
-		<script type="text/javascript" charset="utf-8">
-			document.addEventListener("deviceready", onDeviceReady, false);
-			function onDeviceReady() {
-				var dev_platform = device.platform;
-				if (dev_platform == "iOS") {
-					$("a[onClick=\"navigator.app.exitApp();\"]").hide();
-				}
-			}
-		</script>
+		<script type="text/javascript" src="js/sidepanel.js"></script>
     </head>
 	
     <body>
