@@ -12,6 +12,7 @@
 
 .gallery { list-style: none; padding: 0; margin: 0; }
 .gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+/* Breite der Spalten auf 50% stellen -> 2 Spalten */
 .gallery li { float: left; width: 50%; }
 .gallery li a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
 .gallery li img { display: block; width: 100%; height: auto; }

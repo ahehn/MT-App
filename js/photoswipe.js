@@ -1,3 +1,11 @@
+/* 
+    Document   : JS-Script
+    Created on : 12.08.2013, 19:05:00
+    Author     : Alexander Hehn
+    Description: Muss vor der Benutzung von PhotoSwipe ausgeführt werden. Der Code stammt von http://www.photoswipe.com/
+*/
+
+
 (function(window, $, PhotoSwipe){				
 	$(document).ready(function(){					
 		$('div.gallery-page')
