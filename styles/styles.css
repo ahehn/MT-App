@@ -7,6 +7,18 @@
 
 @charset "UTF-8";
 
+
+/* ??? */
+div#map-canvas {
+	top: 0px ;
+	right: 0px ;
+	bottom: 0px ;
+	left: 0px ;
+	background-image: url(themes/images/ajax-loader.gif) ;
+	background-repeat: no-repeat ;
+	background-position: center ;
+}
+
 /* Bilder für Menüpunkte im Hauptmenü */
 div#Main img{
 	/* 10% Abstand zu den Rändern links und rechts lassen */
@@ -61,13 +73,3 @@ div#Main img{
 	}
 }*/
 
-/* ??? */
-div#map-canvas {
-	top: 0px ;
-	right: 0px ;
-	bottom: 0px ;
-	left: 0px ;
-	background-image: url(themes/images/ajax-loader.gif) ;
-	background-repeat: no-repeat ;
-	background-position: center ;
-}
