@@ -26,7 +26,7 @@ $(document).ready(function(){
 								$.each(json, function(code,data) {
 									if(code == stCode){
 										f_validcode = true;
-										alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
+										//alert('Du bist hier: ' + data.name + '     Etage: ' + data.etage + '     Gebäude: '+ data.bau);
 										$('#positiontext').html(
 										'<center><h3>' + data.name + '</h3></center><p><table><tr><td><b>Etage:</b></td><td>' + data.etage + '</td></tr><tr><td><b>Gebäude:</b></td><td>' + data.bau + '</td></tr></table><table><tr><td><i>Der blaue Pin kennzeichnet deine aktuelle Position</i></td></tr><tr><td><center><img src="bilder/navigation/' + code + '.png" style="max-width:70%;" alt="Gebäude ' + data.bau + ', ' + data.etage + '"></center></tr></table></p>');
 										/*var text = document.getElementById('possitiontext');

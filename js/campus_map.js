@@ -17,6 +17,11 @@
 					onError();
 					$("#welcome").popup("close");
 				});
+				
+				$( "#coord" ).click(function() {
+					onError();
+					$("#mycoord").popup("close");
+				});
 			}
 
 			
