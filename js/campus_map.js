@@ -52,8 +52,8 @@
 						center: Latlng_position,									// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 						mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
 						panControl: false,											// panControl-Button wird deaktiviert
-						zoomControl: false,											// ZoomControl-Button wird aktiviert
-						mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+						zoomControl: true,											// ZoomControl-Button wird aktiviert
+						mapTypeControl: true,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
 						scaleControl: false,										// scaleControl wird aktiviert
 						streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
@@ -75,8 +75,8 @@
 					center: Latlng_center,										// Definition des Mittelspunktes nach dem die Karte ausgerichtet wird
 					mapTypeId: google.maps.MapTypeId.ROADMAP,					// Definiert den Anzeige-Typ der Goole Maps Karte
 					panControl: false,											// panControl-Button wird deaktiviert
-					zoomControl: false,											// ZoomControl-Button wird aktiviert
-					mapTypeControl: false,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
+					zoomControl: true,											// ZoomControl-Button wird aktiviert
+					mapTypeControl: true,										// Auswahlmöglichkeit für Kartentyp wird deaktiviert
 					scaleControl: false,										// scaleControl wird aktiviert
 					streetViewControl: false,									// StreetViewControl-Button wird deaktiviert
 				};
@@ -101,7 +101,7 @@
 					position: myPosition,
 					map: map,
 					title: 'Mein Standort',
-					icon: '../bilder/navigation/position.png'
+					icon: 'bilder/navigation/position.png'
 				});
 			}
 			
@@ -111,7 +111,7 @@
 			//
 			function set_markers(map){
 				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('../daten/gebaeude.json', function(json) {
+				$.getJSON('daten/gebaeude.json', function(json) {
 					$.each(json, function(bau,data) {
 						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
 						// Creating a marker and putting it on the map
@@ -119,7 +119,7 @@
 							position: latLng,
 							map: map,
 							title: data.name,
-							icon: '../bilder/navigation/' + bau + '.png'
+							icon: 'bilder/navigation/' + bau + '.png'
 						});
 					});
 				});
