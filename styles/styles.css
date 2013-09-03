@@ -8,7 +8,7 @@
 @charset "UTF-8";
 
 
-/* ??? */
+/* Hintergrund und Position der Google Maps Seite */
 div#map-canvas {
 	top: 0px ;
 	right: 0px ;
