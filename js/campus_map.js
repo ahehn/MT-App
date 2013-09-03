@@ -19,7 +19,6 @@
 				});
 				
 				$( "#coord" ).click(function() {
-					onError();
 					$("#mycoord").popup("close");
 				});
 			}
