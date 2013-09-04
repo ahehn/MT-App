@@ -1,11 +1,10 @@
-			// Wait for device API libraries to load
-			//
+			// Warten bis die Geräte API Libraries geladen sind.
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			
-			// device APIs are available
-			//
+			// Geräte APIs sind verfügbar
 			function onDeviceReady() {
+				// Als erstes wird das Popup "welcome" gestartet
 				$("#welcome").popup("open", {positionTo: "window"});
 				$( ".geook" ).click(function() {
 					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:600000, timeout:5000, enableHighAccuracy: true});
@@ -13,7 +12,7 @@
 				});
 				
 				$( "#geofalse" ).click(function() {
-					onError();
+					no_pos_info();
 					$("#welcome").popup("close");
 				});
 				
@@ -23,8 +22,7 @@
 			}
 
 			
-			// onSuccess Geolocation
-			//
+			// Die aktuelle Position konnte mittels Phonegap Geolocation ermittelt werden
 			function onSuccess(position) {							
 				$('#geolocation').html('Latitude: '           + position.coords.latitude              + '<br />' +
 									'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -57,11 +55,13 @@
 			}
 
 		
-			// onError Callback creates the Google Map only with the HsKA building markers
-			//
+			// Der Benutzer verneint die Nutzung seiner Standortinformationen oder die aktuelle Position konnte nicht ermittelt werden.
 			function onError(error) {
-				//window.alert('Deine Position konnte nicht ermittelt werden! :-(');
 				$("#nopos").popup("open", {positionTo: "window"});
+				no_pos_info;
+			}
+  
+			function no_pos_info(){
 				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Variable mit der Position nach der die Karte zentriert werden soll
 				var mapOptions = {												// Definition der Anzeige-Optionen der Google-Maps karte
 					zoom: 15,													// Zoom-Stufe der Karte
@@ -77,7 +77,6 @@
 				create_map(mapOptions);
 				set_markers(map); 
 			}
-  
   		
 			// Create the Google Map with the delivered mapOptions in the div-Objekt "map-canvas"
 			//
