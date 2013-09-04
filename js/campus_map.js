@@ -7,7 +7,7 @@
 				// Als erstes wird das Popup "welcome" gestartet
 				$("#welcome").popup("open", {positionTo: "window"});
 				$( ".geook" ).click(function() {
-					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:600000, timeout:5000, enableHighAccuracy: true});
+					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
 					$("#welcome").popup("close");
 				});
 				
