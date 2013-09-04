@@ -89,5 +89,27 @@
 			"longitude": 8.394005,
 			"latitude": 49.014826
 		}
-	}
+	},
+	"KVV_MP": {
+		"name": "KVV Kundenzentrum Marktplatz",
+		"position": {
+			"longitude": 8.394005,
+			"latitude": 49.014826
+		}
+	},
+	"KVV_HBF": {
+		"name": "KVV Kundenzentrum Hauptbahnhof",
+		"position": {
+			"longitude": 8.394005,
+			"latitude": 49.014826
+		}
+	},
+	"studiwerk_ka": {
+		"name": "Studentenwerk Karlsruhe",
+		"position": {
+			"longitude": 8.394005,
+			"latitude": 49.014826
+		}
+	}	
+	
 }

@@ -8,7 +8,6 @@
 			function onDeviceReady() {
 				$("#welcome").popup("open", {positionTo: "window"});
 				$( ".geook" ).click(function() {
-					//$('#map-canvas').html('<a href="#" class="geook" data-role="button" data-icon="refresh" data-theme="a" data-inline="true">Refresh</a>');
 					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:600000, timeout:5000, enableHighAccuracy: true});
 					$("#welcome").popup("close");
 				});
@@ -105,15 +104,15 @@
 			//
 			function set_markers(map){
 				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
-				$.getJSON('daten/gebaeude.json', function(json) {
-					$.each(json, function(bau,data) {
+				$.getJSON('daten/places.json', function(json) {
+					$.each(json, function(name,data) {
 						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
 						// Creating a marker and putting it on the map
 						var marker = new google.maps.Marker({
 							position: latLng,
 							map: map,
 							title: data.name,
-							icon: 'bilder/navigation/' + bau + '.png'
+							icon: 'bilder/navigation/' + name + '.png'
 						});
 					});
 				});
