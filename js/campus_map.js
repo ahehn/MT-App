@@ -1,4 +1,4 @@
-			// Warten bis die Geräte API Libraries geladen sind.
+			// Warten bis die Geräte API Libraries geladen sind
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			
@@ -61,6 +61,7 @@
 				no_pos_info;													// Karte wird ohne Standortinformationen erstellt
 			}
   
+  
 			// Erstellen der Google-Maps Karte ohne Standortinformationen
 			function no_pos_info(){
 				var Latlng_center = new google.maps.LatLng(49.013625,8.390161);	// Erstellt Koordinaten-Variable mit der Position nach der die Karte zentriert werden soll
@@ -78,6 +79,7 @@
 				create_map(mapOptions);											// Google-Maps Karte wird erstellt
 				set_markers(map);												// Pins die besondere Gebäude oder Plätze kennzeichnen werden auf die Karte gesetzt 	
 			}
+			
   		
 			// Google Map KArte wird den übermittelten "mapOptions" erstellt und im DIC-Container "map-canvas" eingefügt
 			function create_map(options){
@@ -97,14 +99,13 @@
 			}
 			
 			
-			
-  			// Set the marker at the position of the user in the Google Map 
+  			// Pins die besondere Gebäude oder Plätze kennzeichnen werden auf die Karte gesetzt
 			function set_markers(map){
-				// Auslesen der JSON-Datei und zeichnen von Google-Maps-Markern
+				// Auslesen der JSON-Datei und Zeichnen von Google-Maps-Markern für jeden einzelne Zeile der JSON-Datei
 				$.getJSON('daten/places.json', function(json) {
 					$.each(json, function(name,data) {
 						var latLng = new google.maps.LatLng(data.position.latitude, data.position.longitude); 
-						// Creating a marker and putting it on the map
+						// Einen Marker erstellen und ihn auf der KArte positionierten
 						var marker = new google.maps.Marker({
 							position: latLng,
 							map: map,
