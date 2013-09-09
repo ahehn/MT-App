@@ -67,13 +67,13 @@
 			
 			<!-- POPUPS -->
 			<!-- POPUP: Abfrage bzgl. der Verwendung von Standortinformationen -->			
-			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+			<div data-role="popup" id="welcome" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a">
 					<h1>Achtung!</h1>
 				</div>
 				<!-- Inhalt der Seite -->	
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<h3 class="ui-title">Verwendung von Standordinformationen!</h3>
 					<p>Um deinen Standort zu bestimmen möchte diese App deine Standortinformationen verwenden. Bist du damit einverstanden?</p>
 					<a href="#" class="geook" data-role="button" data-theme="a">OK</a>
@@ -82,13 +82,13 @@
 			</div>
 			
 			<!-- POPUP: Position konnte nicht ermittelt werden -->				
-			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;" data-history="false">
+			<div data-role="popup" id="nopos" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;" data-history="false">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a">
 					<h1>Achtung!</h1>
 				</div>
 				<!-- Inhalt der Seite -->	
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<p>Dein Standort konnte nicht ermittelt werden! :-(</p>
 					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
 				</div>
@@ -130,7 +130,7 @@
 			
 			<!-- Inhalt der Seite -->
 			<div data-role="content">
-				<p>Du weißt nicht wo du gerade bist? Dann scanne einen QR-Code in deiner Nähe. Er wird die weiterhelfen...</p>
+				<p>Du weißt nicht wo du gerade bist? Dann scanne einen QR-Code in deiner Nähe! Er wird dir weiterhelfen...</p>
 				
 				<!-- Button zum starten Barcode-Scanner Plugins -->
 				<p><button class="scan" data-icon="search" data-iconpos="top">SCAN</button> </p>
@@ -141,55 +141,55 @@
 			
 			<!-- POPUPS -->
 			<!-- POPUP: Fehlermeldung, wenn kein QR-Code gescannt wurde -->	
-			<div data-role="popup" id="noqr" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+			<div data-role="popup" id="noqr" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a" style="width: 100%;">
 					<h1>Achtung!</h1>
 				</div>
 				<!-- Inhalt der Seite -->
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<p>Sorry, aber das ist kein QR-Code!</p>
 					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
-					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>					
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="a">Wiederholen</a>					
 				</div>
 			</div>	
 			
 			<!-- POPUP: Fehlermeldung, wenn kein gültiger QR-Code zur Bestimmung der Position an der HsKA gescannt wurde -->	
-			<div data-role="popup" id="invalidqr1" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+			<div data-role="popup" id="invalidqr1" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a" style="width: 100%;">
 					<h1>Achtung!</h1>
 				</div>
 				<!-- Inhalt der Seite -->
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<p>Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!</p>
 					<a href="#" data-role="button" data-rel="back" data-theme="a">OK</a>
-					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>					
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="a">Wiederholen</a>					
 				</div>
 			</div>
 
 			<!-- POPUP: Fehlermeldung, wenn kein gültiger QR-Code zur Bestimmung der Position an der HsKA gescannt wurde -->			
-			<div data-role="popup" id="invalidqr2" data-overlay-theme="a" data-theme="b" style="right: 1%; left: 1%; width: 98%;">
+			<div data-role="popup" id="invalidqr2" data-overlay-theme="a" data-theme="a" style="right: 1%; left: 1%; width: 98%;">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a" style="width: 100%;">
 					<h1>Achtung!</h1>
 				</div>
 				<!-- Inhalt der Seite -->
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<p>Sorry, aber das ist kein gültiger QR-Code zum bestimmen deiner Position!</p>
 					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">OK</a>
-					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>					
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="a">Wiederholen</a>					
 				</div>
 			</div>
 
 			<!-- POPUP: Anzeige der Position, passend zum eingescannten QR-Code -->
-			<div data-role="popup" id="position" data-overlay-theme="a" data-theme="b"  style="right: 1%; left: 1%; width: 98%;">
+			<div data-role="popup" id="position" data-overlay-theme="a" data-theme="a"  style="right: 1%; left: 1%; width: 98%;">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a">
 					<h1>Deine Position</h1>
 				</div>
 				<!-- Inhalt der Seite -->
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<div id="positiontext">
 					<!-- Hier wird die aktuelle Position eingetragen-->
 					</div>
@@ -198,16 +198,16 @@
 			</div>
 			
 			<!-- POPUP: Fehlermeldung die ausgegeben wird, wenn am BarcodeScanner-Plugin ein Fehler auftritt -->	
-			<div data-role="popup" id="error" data-overlay-theme="a" data-theme="b"  style="right: 1%; left: 1%; width: 98%;">
+			<div data-role="popup" id="error" data-overlay-theme="a" data-theme="a"  style="right: 1%; left: 1%; width: 98%;">
 				<!-- Header -->	
 				<div data-role="header" data-theme="a" style="width: 100%;">
 					<h1>Fehler!</h1>
 				</div>
 				<!-- Inhalt der Seite -->
-				<div data-role="content" data-theme="b">
+				<div data-role="content" data-theme="a">
 					<p>Es konnte kein Barcode gescannt werden!</p>
 					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">OK</a>
-					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="b">Wiederholen</a>	
+					<a href="#" class="scan" data-role="button" data-rel="back" data-theme="a">Wiederholen</a>	
 				
 				</div>
 			</div>						
