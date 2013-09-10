@@ -54,7 +54,7 @@ $(document).on({
     'pageinit': function() {
         
 
-// Fenstergröße abfragen und danach Größen der Elemente anpassen
+        // Fenstergröße abfragen und danach Größen der Elemente anpassen
         scaleContent();
         // Falls Fenstergröße geändert wird, Elemente erneut anpassen
         $(window).resize(function() {
@@ -69,33 +69,27 @@ $(document).on({
         // Bei Klick auf den Start-Button Spiel initialisieren
         $('#button_ready').click(function(){
             // Spielregeln ausblenden
-            $("#popup_rules").popup("close");
-            $('#overlay').fadeOut('fast');
+            $("#popup_rules").popup("close"); 
             // Fenster "Los geht's" einblenden
             timeouts.push(new Timer(function(){
-                $('#overlay').fadeIn('fast');
                 $("#popup_start").popup("open");
             },500));  
         });
         $('#button_ok').click(function(){
             // Fenster "Los geht's" ausblenden
             $("#popup_start").popup("close");
-            $('#overlay').fadeOut('fast'); 
             // Spiel starten
             gameStart();
         });
         
         $('#button_restart').click(function(){
-            $("#popup_end").popup("close");
-            $('#overlay').fadeOut('fast');
-              
+            $("#popup_end").popup("close");             
             // Variablen rücksetzen
             resetVariables();
             // Alles zudecken
             hideAll();
             // Spiel neu starten
             timeouts.push(new Timer(function(){
-                $('#overlay').fadeIn('fast');
                 $("#popup_start").popup("open");
 
             },500));
@@ -113,8 +107,6 @@ $(document).on({
             if(timer_start == 0){ // Timer läuft nicht (= Karten sind nicht bereits eingeblendet)
                 // Panel ausblenden
                 $('#SidePanelMemory').panel('close');
-//                // Transparentes Overlay einblenden
-//                $('#overlay_transp').fadeIn('fast');
                 // Vermerken, dass Joker genutzt wurde
                 joker_inuse = true;
                 // Alle Karten einblenden
@@ -154,11 +146,7 @@ $(document).on({
                 hideAll(); // alle Karten wieder umdrehen
                 
                 
-                $('#overlay_transp').fadeOut('fast'); // Overlay ausblenden
-                
-                // Timeouts fortsetzen
-//                for (var i = 0; i < timeouts.length; i++) {
-//                timeouts[i].resume();}      
+                $('#overlay_transp').fadeOut('fast'); // Overlay ausblenden     
             }  
         });
         
@@ -171,7 +159,6 @@ $(document).on({
             hideAll();
             // Spiel neu starten
             timeouts.push(new Timer(function(){
-                $('#overlay').fadeIn('fast');
                 $("#popup_start").popup("open");
 
             },500));
@@ -184,34 +171,17 @@ $(document).on({
                 timeouts[i].resume();
             }
         });
-//      $('.card').click(function() {
-//            $('#overlay').fadeIn('fast', function() {
-//                $('#productbox').animate({'top': '20%'}, 500);
-//            });
-//        });
-//        $('.card').click(function() {
-//            turnCard(this); // Bei Klick entsprechende Karte umdrehen
-//        });
-//        $('#productbox').click(function() {
-//            $('#productbox').animate({'top': '-100%'}, 500, function() {
-//                $('#overlay').fadeOut('fast');
-//            });
-//        });
-//
 
         $('#popup_product').click(function() {
 
             $("#popup_product").popup("close");
-            $('#overlay').fadeOut('fast');
         });
     },
+            
+    // Beim ersten Anzeigen der Seite:        
     'pageshow': function() {
-
-        
-        $('#overlay').fadeIn('fast');
+        // Popup mit den Spielregeln einblenden
         $("#popup_rules").popup("open");
-        
-
 
     }
 });
@@ -362,16 +332,7 @@ function gameStart(){
     // Logos mischen
     init();
     // Logos einblenden
-    showAll();
-    
-//    $('.card').off('click');
-//    // Alle Karten einblenden
-//    turnCard('all');
-//    timeouts.push(new Timer(function(){
-//        $('.card').click(function(){cardClicked(this);});
-//        game();
-//    },4000));
-//    
+    showAll();  
 }
 
 function game(){
@@ -380,18 +341,26 @@ function game(){
     }
     else{
         // Letzte Karte aufdecken
+        var num = 0;
         for(i=1; i<=20; i++){
-        if(cleared_cards[i-1] == false){ // Karte noch nicht gefunden
-            turnCard('#card'+i+' div'); 
-            removeCard('#card'+i+' div');
+            if(cleared_cards[i-1] == false){ // Karte noch nicht gefunden
+                num = i; // Nummer merken
+                break; // Schleife beenden
+            }
         }
-    }
-    timeouts.push(new Timer(function(){     
-        // Spielende-Popup einblenden
-        $('#overlay').fadeIn('fast');
-        $('#points_final').text(currentpoints);
-        $('#popup_end').popup('open');
-    },3000));
+        // Merken, dass diese Karte bereits gefunden wurde
+        cleared_cards[num - 1] = true; 
+        
+        turnCard('#card' + num + ' div'); // Karte umdrehen
+        timeouts.push(new Timer(function() {
+            removeCard('#card' + num);
+        }, 1000)); // Karte nach 1 Sek. ausgrauen
+        
+        timeouts.push(new Timer(function(){     
+            // Spielende-Popup einblenden
+            $('#points_final').text(currentpoints);
+            $('#popup_end').popup('open');
+        },3000));
     }
 }
 

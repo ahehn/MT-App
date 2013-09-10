@@ -36,7 +36,7 @@
             
 			
             <!-- Regeln-Popup -->
-            <div data-role="popup" id="popup_rules" data-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
+            <div data-role="popup" id="popup_rules" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false" data-history="false">
                 <div data-role="header" ><h1>So geht's</h1></div>
                 <div data-role="content">
                     <p class="rules">
@@ -46,15 +46,15 @@
                     <div data-role='button' id='button_ready'>
                         Na klar!
                     </div>
-					<div data-role='button' id='button_exit' data-icon="delete" data-iconpos="left">
-                        Spiel verlassen
-                    </div>
+                    <a data-role="button" data-transition="slide" data-direction="reverse" data-rel="index.html#Spiele" href="index.html#Spiele" rel="external">
+                        Nee, ich will zur&uuml;ck...
+                    </a>
                 </div>       
             </div>
 			
 			
 			<!-- Start-Popup -->
-            <div data-role="popup" id="popup_start" data-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
+            <div data-role="popup" id="popup_start" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
                 <div data-role="header" ><h1>Los geht's</h1></div>
                 <div data-role="content">
                     <p class="rules">
@@ -68,7 +68,7 @@
             
             
             <!-- Punkte-Popup -->
-            <div data-role="popup" id="popup_points" data-theme="a" data-transition='slidedown' data-dismissible="false">
+            <div data-role="popup" id="popup_points" data-theme="a" data-overlay-theme="a" data-transition='slidedown' data-dismissible="false">
                 <div data-role="header" ><h1>Punkte</h1></div>
                 <div data-role="content" id="popup-content">
                 <p class="points_text">0</p>
@@ -77,18 +77,16 @@
             
 			
 			<!-- Produktbild-Popup -->
-            <div data-role="popup" id="popup_product" data-theme="a" data-transition='slidedown'>
-                <div data-role="header" >
-                    <h1> </h1>
-                    <div  data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></div></div>
-                <div data-role="content">
+            <div data-role="popup" id="popup_product" data-theme="a" data-overlay-theme="a" data-transition='slidedown'>
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                
                 <img class ="product" src="bilder/memory/products/bosch.jpg">
-                </div>                    
+                                   
             </div>
 
 			
             <!-- Spielende-Popup -->            
-            <div data-role="popup" id="popup_end" data-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
+            <div data-role="popup" id="popup_end" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
                 <div data-role="header" ><h1>Spiel beendet</h1></div>
                 <div data-role="content">
                     <p style="text-align: center; margin-top: 10px">
@@ -96,14 +94,15 @@
                     </p>
                     <p class="points_final" id="points_final"></p>
                     <div data-role='button' id='button_restart' data-icon="refresh" data-iconpos="left">
-                        Nochmal
-                    </div>					
+                        Neustart
+                    </div>	
+                    <a data-role="button" data-transition="slide" data-direction="reverse" data-rel="index.html#Spiele" href="index.html#Spiele" rel="external">
+                        Spiel verlassen
+                    </a>
                 </div>       
             </div>
 			
-            
-            <!-- Overlay (abdunkeln der Seite) -->
-            <div class="overlay" id="overlay" style="display:none;"></div>
+           
             
             <!-- Overlay (durchsichtig, nur aus Programmablauf-Gründen) -->
             <div class="overlay_transparent" id="overlay_transp" style="display:none;"></div>
@@ -111,7 +110,7 @@
 		
             <div data-role="header" >
 				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" data-rel="back" href="index.html#Spiele" rel="external">Zurück</a>
-				<h1>Produktememory</h1>
+				<h1>Memory</h1>
                 <a data-role="button" data-icon="grid" data-transition="slide" class="ui-btn-right" id="button_menu">Menü</a>
 			</div>
 			
