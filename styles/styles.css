@@ -21,15 +21,15 @@ div#map-canvas {
 
 /* Bilder für Menüpunkte im Hauptmenü */
 div#Main img{
-	/* 10% Abstand zu den Rändern links und rechts lassen */
-	margin-left: 10%;
 	/* Bilder am unteren Rand ansetzen */
 	vertical-align: bottom;
-	/* Border auf 0 setzen, damit es so aussieht, als wäären die fünf Grafiken eine einzige */
+	/* Border auf 0 setzen, damit es so aussieht, als wären die fünf Grafiken eine einzige */
     border: none;
+	/* Breite der Bilder auf 100% setzen, damit sie über die gesamte Breite des Bildschirms gestreckt werden */
+	width: 100%;
 }
 
-/* Hintergrundgrafik für die Sidepanels */
+/* Hintergrundgrafik für Theme "b", also für Sidepanels und Hauptmenü */
 .ui-body-b {
 	/* Das Lineal aus dem Corporate Design als Hintergrund benutzen */
 	background: url(themes/images/bg.png);
