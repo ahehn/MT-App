@@ -35,7 +35,6 @@ div#Main img{
 	background: url(themes/images/bg.png);
 	/* Das Bild nur ein einziges Mal anzeigen, egal wie groß das Panel ist */
     background-repeat: no-repeat;
-	background-attachment: fixed;
 	/* Das Bild immer so darstellen, dass es 100% der Höhe des Bildschirms ausfüllt */
 	background-size: auto 100%;
 	/* Das Lineal an den unteren linken Rand setzen */
