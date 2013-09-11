@@ -8,9 +8,9 @@
     },
     "2": {
         "FrageA": "James Watt",
-        "Antwort1A": "Erfinder der Dampfmaschine",
-        "Antwort2A": "Erfinder des Revolvers",
-        "Antwort3A": "Entdecker des Pulvers",
+        "Antwort1A": "Erfinder des Revolvers",
+        "Antwort2A": "Entdecker des Pulvers",
+		"Antwort3A": "Erfinder der Dampfmaschine",
         "Antwort4A": "Erfinder der Glühbirne"
     },
     "3": {
