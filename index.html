@@ -3108,10 +3108,9 @@
 				</script>
 				<!-- 8. Frage + Antworten -->
 				<p>
-					<!--<a href="#AUSWERTEN" data-role="button" data-inline="true">Auswerten</a>-->
-					
-					<a href="#" data-role="button" data-inline="true" value="Auswerten!" onclick="auswerten_1()">Auswerten</a>
-					<div id="ausgabe_1">&nbsp;</div>
+					<a href="#ausgabe_1" data-rel="popup" data-role="button" data-inline="true" data-transition="pop" value="Auswerten!" onclick="auswerten_1()">Auswerten</a>
+					<div data-role="popup" id="ausgabe_1">
+					</div>
 					<p>
 						<a href="#Loesung" data-role="button" data-inline="true">LÖSUNG</a>
 					</p>
@@ -3857,14 +3856,15 @@
 					document.getElementById("jA13Antwort4").innerHTML=JSON13A.Antwort4
 				</script>
 				<p>
-					<a href="#" data-role="button" data-inline="true" value="Auswerten!" onclick="auswerten()">AUSWERTEN</a>
-					<div id="ausgabe">&nbsp;</div>
+					<!--<a href="#" data-role="button" data-inline="true" value="Auswerten!" onclick="auswerten()">AUSWERTEN</a>
+					<div id="ausgabe">&nbsp;</div>-->
+					<a href="#ausgabe" data-rel="popup" data-role="button" data-inline="true" data-transition="pop" value="Auswerten!" onclick="auswerten()">AUSWERTEN</a>
+					<div data-role="popup" id="ausgabe">
+					</div>
 					<p>
 						<a href="#LoesungA" data-role="button" data-inline="true">LÖSUNG</a>
 					</p>
-					<!--<a href="#ausgabe1" data-rel="popup" data-role="button" data-inline="true" data-transition="pop" data-icon="home" value="Auswerten!" onclick="auswerten()">AUSWERTEN</a>
-					<div data-role="popup" id="ausgabe1"><p>&nbsp;</p>
-					</div>-->
+					
 				</p>
 			</div>
 		</div>
