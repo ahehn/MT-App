@@ -15,5 +15,8 @@ function sidepanel_onDeviceReady() {
 	if (dev_platform == "iOS") {
 	// Wenn ja, alle "App schließen"-Buttons verstecken
 		$("a[onClick=\"navigator.app.exitApp();\"]").hide();
+		alert('iOS erkannt!');
+	} else {
+		alert('KEIN iOS erkannt :(');
 	}
 }
