@@ -9,7 +9,7 @@
 				
 				// Benutzer erlaubt die Verwendung von Standortinformationen
 				$( ".geook" ).click(function() {
-					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:0, timeout:5000, enableHighAccuracy: true});
+					navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge:10, timeout:5000, enableHighAccuracy: true});
 					$("#welcome").popup("close");
 				});
 				
