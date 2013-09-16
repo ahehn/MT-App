@@ -12,7 +12,7 @@
 			.on('pageshow', function(e){							
 				var 
 					currentPage = $(e.target),
-					options = {},
+					options = {jQueryMobile:true,},
 					photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));								
 				return true;							
 			})						
