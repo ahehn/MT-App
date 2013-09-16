@@ -29,6 +29,11 @@ div#Main img{
 	width: 100%;
 }
 
+/* Rand um den Content des Hauptmenüs entfernen, damit die Bilder bis an den Rand reichen */
+div#Main .ui-content {
+	padding: 0px;
+}
+
 /* Hintergrundgrafik für Theme "b", also für Sidepanels und Hauptmenü */
 .ui-body-b {
 	/* Das Lineal aus dem Corporate Design als Hintergrund benutzen */
