@@ -25,8 +25,9 @@ div#Main img{
 	vertical-align: bottom;
 	/* Border auf 0 setzen, damit es so aussieht, als wären die fünf Grafiken eine einzige */
     border: none;
-	/* Breite der Bilder auf 100% setzen, damit sie über die gesamte Breite des Bildschirms gestreckt werden */
-	width: 100%;
+	/* Breite der Bilder auf 95% setzen, und um 5% der eigenen Breite nach rechts schieben, damit sie rechts am Rand kleben */
+	width: 95%;
+	margin-left: 5%;
 }
 
 /* Rand um den Content des Hauptmenüs entfernen, damit die Bilder bis an den Rand reichen */
