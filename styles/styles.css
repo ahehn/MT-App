@@ -26,8 +26,8 @@ div#Main img{
 	/* Border auf 0 setzen, damit es so aussieht, als wären die fünf Grafiken eine einzige */
     border: none;
 	/* Breite der Bilder auf 95% setzen, und um 5% der eigenen Breite nach rechts schieben, damit sie rechts am Rand kleben */
-	width: 95%;
-	margin-left: 5%;
+	width: 85%;
+	margin-left: 10%;
 }
 
 /* Rand um den Content des Hauptmenüs entfernen, damit die Bilder bis an den Rand reichen */
