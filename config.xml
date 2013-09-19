@@ -86,10 +86,6 @@
     <icon src="icon.png"							gap:platform="winphone"		gap:role="background" />
 
     <!-- Ladescreen festlegen -->
-    <gap:splash src="loadscreen.png" />	
-	<gap:splash src="bilder/splash/screen-ldpi-portrait.png"				gap:platform="android"		gap:density="ldpi" />
-    <gap:splash src="bilder/splash/screen-mdpi-portrait.png"				gap:platform="android"		gap:density="mdpi" />
-    <gap:splash src="bilder/splash/screen-hdpi-portrait.png"				gap:platform="android"		gap:density="hdpi" />
     <gap:splash src="bilder/splash/screen-xhdpi-portrait.png"				gap:platform="android"		gap:density="xhdpi" />
     <gap:splash src="bilder/splash/screen-iphone-portrait.png"				gap:platform="ios"			width="320"		height="480" />
     <gap:splash src="bilder/splash/screen-iphone-portrait-2x.png"			gap:platform="ios"			width="640"		height="960" />
