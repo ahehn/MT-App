@@ -8,18 +8,20 @@
 
 /* Content-Bereich ohne Abstand zum Rand (jQuery-Mobile Standard überschreiben) */
 .ui-content{
-    margin-left: 1%;
-    margin-top: 1%;
+/*    margin-left: 1%;
+    margin-top: 1%;*/
     padding: 0px;} 
-
+.button_frame{
+    padding: 1%;
+}
 .container {
     position: relative;
     z-index: 1;
     perspective: 300px;
     -webkit-perspective: 300px;
     float: left;
-    margin-right: 1%;
-    margin-bottom: 1%;
+    
+
 }
 
 .card {
@@ -99,21 +101,7 @@
     margin: 0;
     padding: 0;
 }
-#popup_points-popup{
-    width: 70%;
-}
-#popup_product-popup{
-    width: 70%;
-}
-#popup_rules-popup{
-    width: 90%;
-}
-#popup_start-popup{
-    width: 90%;
-}
-#popup_end-popup{
-    width: 90%;
-}
+
 .rules{
     padding: 15px;
 

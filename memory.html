@@ -7,14 +7,18 @@
 
         <link rel="stylesheet"  href="styles/themes/20130807_MT_Theme.min.css" />
         <link rel="stylesheet"  href="styles/jquery.mobile.structure-1.3.2.min.css" />
-        <link rel="stylesheet"  href="styles/memory.css" />
+
         <link rel="stylesheet"  href="styles/styles.css" />
+        
+        <link rel="stylesheet"  href="styles/memory.css" />
+        
 
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/memory.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 		
-        <script type="text/javascript" src="phonegap.js"></script>
+        
 
         <!-- Sidepanels ausblenden, falls iOS verwendet wird -->
         <script type="text/javascript" src="js/sidepanel.js"></script>
@@ -36,19 +40,21 @@
            
 			
             <!-- Regeln-Popup -->
-            <div data-role="popup" id="popup_rules" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false" data-history="false">
+            <div data-role="popup" id="popup_rules" data-position-to="window" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false" data-history="false">
                 <div data-role="header" ><h1>So geht's</h1></div>
                 <div data-role="content">
                     <p class="rules">
                         <i><strong>Finde die passenden Firmenlogos zu den gezeigten Produkten!</strong><br>
 						Vor Spielbeginn werden die Logos von 20 Unternehmen eingeblendet - anschließend werden alle Karten umgedreht und das Spiel beginnt...<strong>bereit?</strong></i>
                     </p>
-                    <div data-role='button' id='button_ready'>
-                        Na klar!
+                    <div class="button_frame">
+                        <div data-role='button' id='button_ready'>
+                            Na klar!
+                        </div>
+                        <a data-role="button" data-transition="slide" data-direction="reverse" data-rel="index.html#Spiele" href="index.html#Spiele" rel="external">
+                            Nee, ich will zur&uuml;ck...
+                        </a>
                     </div>
-                    <a data-role="button" data-transition="slide" data-direction="reverse" data-rel="index.html#Spiele" href="index.html#Spiele" rel="external">
-                        Nee, ich will zur&uuml;ck...
-                    </a>
                 </div>       
             </div>
 			
@@ -59,10 +65,13 @@
                 <div data-role="content">
                     <p class="rules">
                         <i><strong>Die Logos werden nun eingeblendet - also gut merken!</strong><br>Bei Klick auf den Bildschirm startet das Spiel - sei schnell!</i>
-                    </p>  
-                    <div data-role='button' id='button_ok'>
-                        Ok!
+                    </p> 
+                    <div class="button_frame">
+                        <div data-role='button' id='button_ok'>
+                            Ok!
+                        </div>
                     </div>
+                    
                 </div>       
             </div>
             
@@ -86,19 +95,21 @@
 
 			
             <!-- Spielende-Popup -->            
-            <div data-role="popup" id="popup_end" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
+            <div data-role="popup" id="popup_end" data-position-to="window" data-theme="a" data-overlay-theme="a" data-transition='slidedown' class='ui-content' data-dismissible="false">
                 <div data-role="header" ><h1>Spiel beendet</h1></div>
                 <div data-role="content">
                     <p style="text-align: center; margin-top: 10px">
                         <strong>Deine Punktzahl:</strong>
                     </p>
                     <p class="points_final" id="points_final"></p>
-                    <div data-role='button' id='button_restart' data-icon="refresh" data-iconpos="left">
-                        Neustart
-                    </div>	
-                    <a data-role="button" data-transition="slide" data-direction="reverse" data-rel="index.html#Spiele" href="index.html#Spiele" rel="external">
-                        Spiel verlassen
-                    </a>
+                    <div class="button_frame">
+                        <div data-role='button' id='button_restart' data-icon="refresh" data-iconpos="left">
+                            Neustart
+                        </div>	
+                        <a data-role="button" data-transition="slide" data-direction="reverse" data-rel="index.html#Spiele" href="index.html#Spiele" rel="external">
+                            Spiel verlassen
+                        </a>
+                    </div>
                 </div>       
             </div>
 			
@@ -108,7 +119,7 @@
             <div class="overlay_transparent" id="overlay_transp" style="display:none;"></div>
         
 		
-            <div data-role="header" >
+            <div data-role="header" data-position="fixed">
 				<a data-role="button" data-icon="back" data-transition="slide" data-direction="reverse" data-rel="back" href="index.html#Spiele" rel="external">Zurück</a>
 				<h1>Memory</h1>
                 <a data-role="button" data-icon="grid" data-transition="slide" class="ui-btn-right" id="button_menu">Menü</a>

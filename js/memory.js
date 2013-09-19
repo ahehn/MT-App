@@ -72,6 +72,7 @@ $(document).on({
             $("#popup_rules").popup("close"); 
             // Fenster "Los geht's" einblenden
             timeouts.push(new Timer(function(){
+                scalePopups();
                 $("#popup_start").popup("open");
             },500));  
         });
@@ -79,7 +80,9 @@ $(document).on({
             // Fenster "Los geht's" ausblenden
             $("#popup_start").popup("close");
             // Spiel starten
-            gameStart();
+            timeouts.push(new Timer(function(){
+                gameStart();
+            },500));
         });
         
         $('#button_restart').click(function(){
@@ -90,8 +93,8 @@ $(document).on({
             hideAll();
             // Spiel neu starten
             timeouts.push(new Timer(function(){
+                scalePopups();
                 $("#popup_start").popup("open");
-
             },500));
         });
         
@@ -115,6 +118,21 @@ $(document).on({
             else{
                 // Fehlermeldung Karten bereits eingeblendet
             }
+            
+        });
+        
+        $('#popup_points').click(function(){
+            $("#popup_points").popup("close");
+            // Evtl. noch laufende Timeouts anhalten
+            for (var i = 0; i < timeouts.length; i++) {
+                timeouts[i].pause();
+            }
+            timeouts.push(new Timer(function() {
+                $('.card').off('click').on('click', function() {
+                    cardClicked(this);
+                }); // Klick auf Karten wieder aktivieren
+                game(); // Wieder zurück zur game-Funktion springen
+            }, 200));
             
         });
         
@@ -159,8 +177,8 @@ $(document).on({
             hideAll();
             // Spiel neu starten
             timeouts.push(new Timer(function(){
+                scalePopups();
                 $("#popup_start").popup("open");
-
             },500));
         });
         
@@ -181,34 +199,47 @@ $(document).on({
     // Beim ersten Anzeigen der Seite:        
     'pageshow': function() {
         // Popup mit den Spielregeln einblenden
+        scalePopups();
         $("#popup_rules").popup("open");
-
     }
 });
       
 
 /* Funktion zum Anpassen diverser Content-Elemente an die Fenster-Auflösung*/
-function scaleContent(){
-        // Dimensionen des Bildschirms abfragen 
-        var width = $(window).width();
-        var height = $(window).height();
+function scaleContent() {
+    // Dimensionen des Bildschirms abfragen 
+    var width = $(window).width();
+    var height = $(window).height();
 
 
-        // Content-Bereich anpassen
-        $('.cardboard').css({"width": +width + "px"});
+    // Content-Bereich anpassen
+    $('.cardboard').css({"width": +width * 0.98 + "px"});
+    $('.cardboard').css({"margin": +width * 0.01 + "px"});
 
-        // Card-Elemente anpassen
-        $('.container').css({"width": +0.95*width / 4 + "px"});
-        $('.container').css({"height": +0.95*width / 4 + "px"});
-        
-        //Wert 'perspective' anpassen, da Perspektive mit Fensterbreite skaliert
-        $('.container').css({"perspective": +width+ "px"});
-        $('.container').css({"-webkit-perspective": +width+ "px"});
-        
-        //Punkte-Popup anpassen
-        $('#popup-content').css({"height": +height/4+ "px"}); // Höhe des Popup-Contents anpassen
-        fontNormal(); // Schriftgröße anpassen
-        
+    var cardboard_width = width * 0.98;
+    // Card-Elemente anpassen
+    $('.container').css({"width": +cardboard_width * 23 / 100 + "px"});
+    $('.container').css({"height": +cardboard_width * 23 / 100 + "px"});
+    $('.container').css({"margin": +cardboard_width * 0.01 + "px"});
+
+
+
+    //Wert 'perspective' anpassen, da Perspektive mit Fensterbreite skaliert
+    $('.container').css({"perspective": +width + "px"});
+    $('.container').css({"-webkit-perspective": +width + "px"});
+
+    //Punkte-Popup anpassen
+    $('#popup-content').css({"height": +height / 4 + "px"}); // Höhe des Popup-Contents anpassen
+    fontNormal(); // Schriftgröße anpassen       
+}
+
+function scalePopups() {
+    var width = $(window).width();
+    $('#popup_rules-popup').css({'width': +width * 0.9 + 'px', 'left': +width * 0.05 + 'px'});
+    $('#popup_start-popup').css({'width': +width * 0.9 + 'px', 'left': +width * 0.05 + 'px'});
+    $('#popup_product-popup').css({'width': +width * 0.7 + 'px', 'left': +width * 0.15 + 'px'});
+    $('#popup_points-popup').css({'width': +width * 0.7 + 'px', 'left': +width * 0.15 + 'px'});
+    $('#popup_end-popup').css({'width': +width * 0.9 + 'px', 'left': +width * 0.05 + 'px'});
 }
 
 
@@ -286,7 +317,8 @@ function fontNormal(){ // Normale Schriftgröße
     }
     
 // Funktion zum Ändern der Punktzahl (inkl. Ein- und Ausblenden des Popups)
-function addPoints(value){   
+function addPoints(value){ 
+    scalePopups();
     $( "#popup_points" ).popup( "open" ); // Punkte-Popup einblenden
     timeouts.push(new Timer(function(){
         fontBig(); // Schrift groß machen
@@ -359,6 +391,7 @@ function game(){
         timeouts.push(new Timer(function(){     
             // Spielende-Popup einblenden
             $('#points_final').text(currentpoints);
+            scalePopups();
             $('#popup_end').popup('open');
         },3000));
     }
@@ -417,6 +450,7 @@ function showProduct()
     current_id = names_copy[i]; // Produktname speichern
     // Bild anzeigen
     timeouts.push(new Timer(function(){
+        scalePopups();
         $('#popup_product').popup('open');
     },500));
 } 
